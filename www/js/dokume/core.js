@@ -6,7 +6,22 @@ class DM_CORE_CLS {
   }
 
   initDefault(){
-    
+    this.getLoginData();
+  }
+
+  getLoginData(){
+    userConfig = localStorage.getItem('userConfig');
+    if (userConfig) {
+        try {
+            userConfig = JSON.parse(atob(userConfig));
+        } catch (e) {
+            try {
+                userConfig = JSON.parse(userConfig);
+            } catch (e2) {
+                alert('Error');
+            }
+        }
+    }
   }
 
   shuffleArray(array) {
@@ -102,15 +117,13 @@ class DM_CORE_CLS {
   }
 
   apiForm(url,json,cb){
-    var head = {
-      "x-api-key": DM_CORE_CONFIG.API_KEY
-    };
-    if(adminConfig && typeof adminConfig.token != 'undefined'){
-      head.Authorization = "Bearer "+adminConfig.token;
-    }
-    if(userConfig && typeof userConfig.token != 'undefined'){
-      head.Authorization = "Bearer "+userConfig.token;
-    }
+    var head = { };
+    // var head = {
+    //   "x-api-key": DM_CORE_CONFIG.API_KEY
+    // };
+    // if(userConfig && typeof userConfig.token != 'undefined'){
+    //   head.Authorization = "Bearer "+userConfig.token;
+    // }
     var settings = {
       "url": DM_CORE_CONFIG.API_URL +url,
       "method": "POST",

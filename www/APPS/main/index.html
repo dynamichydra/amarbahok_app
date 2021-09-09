@@ -1,4 +1,19 @@
 <style type="text/css">
+    .welcome-div{
+        padding: 20px 10px;
+        background-color: #a9ffb0;
+        margin-bottom: 30px;
+    }
+    .welcome-div h1{
+        font-size: 22px;
+    }
+    .welcome-div i{
+        float: right;
+        font-size: 50px;
+        line-height: 20px;
+        color: #178404;
+        font-weight: 500;
+    }
     .block{
         width: 98%;
         margin: 10px auto;
@@ -7,33 +22,114 @@
         background-color: #dc0f48;
         border-radius: 10px;
     }
+    hr.dashboard_partition {
+  border: 1px solid rgba(9,9,9,0.22);
+}
 </style>
 <div class="container"> 
     <h1 style="color: #dc0f48;margin: 30px 0px;">Dashboard</h1>
     <div class="row">
-        <div class="col s6">
-            <div class="block" style="background-color: rgb(9, 158, 83);"></div>
+        <div class="col s12">
+            <div class="welcome-div">
+                <h1>Welcome, <span id="uname"></span><i class="fa fa-smile-o" aria-hidden="true"></i></h1>
+            </div>
         </div>
         <div class="col s6">
-            <div class="block" style="background-color: blueviolet;"></div>
+            <div class="block" style="background-color: #cc0000;">
+                <div style="text-align: center;margin-top: 5px;">
+                    <span id="torder" class="counter-anim" style="color: white;">10</span><br>
+                    <span class="weight-500" style="color: white;">Total Order</span>
+                </div>
+            </div>
         </div>
         <div class="col s6">
-            <div class="block"></div>
+            <div class="block" style="background-color: #cc0000;">
+                <div style="text-align: center;margin-top: 5px;">
+                    <span class="counter-anim" style="color: white;">10</span><br>
+                    <span class="weight-500" style="color: white;">Parcel Cancelled</span>
+                </div>
+            </div>
         </div>
         <div class="col s6">
-            <div class="block" style="background-color: cyan;"></div>
+            <div class="block" style="background-color: #cc0000;">
+                <div style="text-align: center;margin-top: 5px;">
+                    <span class="counter-anim" style="color: white;">10</span><br>
+                    <span class="weight-500" style="color: white;">Parcel Received</span>
+                </div>
+            </div>
         </div>
         <div class="col s6">
-            <div class="block" style="background-color: dodgerblue;"></div>
+            <div class="block" style="background-color: #cc0000;">
+                <div style="text-align: center;margin-top: 5px;">
+                    <span class="counter-anim" style="color: white;">10</span><br>
+                    <span class="weight-500" style="color: white;">New Order</span>
+                </div>
+            </div>
         </div>
         <div class="col s6">
-            <div class="block" style="background-color: goldenrod;"></div>
+            <div class="block" style="background-color: #cc0000;">
+                <div style="text-align: center;margin-top: 5px;">
+                    <span class="counter-anim" style="color: white;">10</span><br>
+                    <span class="weight-500" style="color: white;">Parcel In-Transit</span>
+                </div>
+            </div>
         </div>
         <div class="col s6">
-            <div class="block" style="background-color: hotpink;"></div>
+            <div class="block" style="background-color: #cc0000;">
+                <div style="text-align: center;margin-top: 5px;">
+                    <span class="counter-anim" style="color: white;">10</span><br>
+                    <span class="weight-500" style="color: white;">Parcel Delivered</span>
+                </div>
+            </div>
         </div>
         <div class="col s6">
-            <div class="block" style="background-color: rgb(177, 238, 11);"></div>
+            <div class="block" style="background-color: #cc0000;">
+                <div style="text-align: center;margin-top: 5px;">
+                    <span class="counter-anim" style="color: white;">10</span><br>
+                    <span class="weight-500" style="color: white;">Parcel Rescheduled</span>
+                </div>
+            </div>
+        </div>
+        <div class="col s6">
+            <div class="block" style="background-color: #cc0000;">
+                <div style="text-align: center;margin-top: 5px;">
+                    <span class="counter-anim" style="color: white;">10</span><br>
+                    <span class="weight-500" style="color: white;">Parcel Returned</span>
+                </div>
+            </div>
+        </div>
+        <hr class="dashboard_partition">
+        <div class="col s6">
+            <div class="block" style="background-color: #cc0000;">
+                <div style="text-align: center;margin-top: 5px;">
+                    <span style="color: white;">TK.<span class="counter-anim" style="color: white;">10</span></span><br>
+                    <span class="weight-500" style="color: white;">Total Sales</span>
+                </div>
+            </div>
+        </div>
+        <div class="col s6">
+            <div class="block" style="background-color: #cc0000;">
+                <div style="text-align: center;margin-top: 5px;">
+                    <span style="color: white;">TK.<span class="counter-anim" style="color: white;">10</span></span><br>
+                    <span class="weight-500" style="color: white;">Total Received Amount</span>
+                </div>
+            </div>
+        </div>
+        <div class="col s6">
+            <div class="block" style="background-color: #cc0000;">
+                <div style="text-align: center;margin-top: 5px;">
+                    <span style="color: white;">TK.<span class="counter-anim" style="color: white;">10</span></span><br>
+                    <span class="weight-500" style="color: white;">Total DC Paid</span>
+                </div>
+            </div>
+        </div>
+        <div class="col s6">
+            <div class="block" style="background-color: #cc0000;">
+                <div style="text-align: center;margin-top: 5px;">
+                    <span style="color: white;">TK.<span class="counter-anim" style="color: white;">10</span></span><br>
+                    <span class="weight-500" style="color: white;">Total Due Amount</span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
