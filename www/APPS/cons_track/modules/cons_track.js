@@ -27,9 +27,9 @@
     <p><b>Customer Name:- </b>${res.customer[0].recipient_name}</p>
     <p><b>Customer Address:- </b>${res.customer[0].recipient_address}</p>
     <p><b>Contact No :- </b>${res.customer[0].recipient_number}</p>
-    <p><b>Parcel Weight :- </b>${res.consignment_id[0].total_weight} kg</p>
+    <p><b>Parcel Weight :- </b>${res.consignment_id[0].total_weight}</p>
     <p><b>Parcel Price:- </b>TK ${res.consignment_id[0].total_price_product}</p>
-    <p><b>Cash Collection Amount:- </b>TK ${res.consignment_id[0].cash_collection}</p>
+    <p><b>Cash Collection:- </b>TK ${res.consignment_id[0].cash_collection}</p>
     <p><b>Delivery Charge:- </b>TK ${res.consignment_id[0].total_price}</p>
     <p><b>COD Charge:- </b>TK ${res.consignment_id[0].total_cod_charge}</p>
     </div>

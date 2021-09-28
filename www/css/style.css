@@ -7,7 +7,7 @@
 /*general*/
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Cambria, Georgia, serif;
     color: #888;
     font-size: 15px;
     background: #fff;
@@ -21,7 +21,7 @@ h5,
 h6 {
     line-height: 110%;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: Cambria, Georgia, serif;
     font-weight: 500;
     color: #333;
 }
@@ -2255,7 +2255,7 @@ input[type=number]
   text-align: center;
   color: #333;
   font-size: 13px;
-  font-family: "Trebuchet MS", Helvetica, sans-serif !important;
+  font-family: Cambria, Georgia, serif !important;
   line-height: 1.1;
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);

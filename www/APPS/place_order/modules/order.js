@@ -105,7 +105,7 @@ var disc = "0";
 
     function getAjaxpackageprice(total_weight){
       console.log(disc);
-      var total_weight = $("#parcel_wt").val();
+      var total_weight = Math.ceil($("#parcel_wt").val());
       var package_id = $("#package_name").val();
       var chargearea = $("#service_area").val();
       var actualparcelprice = $("#parcel_price").val();

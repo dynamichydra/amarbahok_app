@@ -8,14 +8,12 @@
     $('.btm-mnu').hide();
     $('.sidebar').hide();
     $('.content-right').hide();
-    // $('.modal').modal();
     $('#signup').on('click',doRegister);
   }
 
-//   $(document).ready(function () {
-//     $('.modal').modal();
-// }
-// )
+  $(document).ready(function () {
+    $('.modal').modal();
+})
 
   function doRegister(){
     var name = $('#name').val();
