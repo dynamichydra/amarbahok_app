@@ -1,0 +1,185 @@
+<style type="text/css">
+    .manuTab{
+        text-align: left;
+        padding: 20px 0px 10px;
+    }
+    .manuTab h3{
+        color: #99211d;
+    }
+    select {
+    /* background-color: rgba(255, 255, 255, 0.9); */
+    width: 101% !important;
+    /* padding: 5px 0px 5px 20px !important; */
+    border: #99211d 1px solid !important;
+    /* border-radius: 2px; */
+    height: 3.8rem;
+    /* margin-left: 10px !important; */
+    border-radius: 5px;
+}
+hr.total_partition {
+  border: 1px solid green;
+}
+</style>
+<div class="container"> 
+    <div class="row">
+        <div class="col s12">
+            <div class="manuTab active">
+                <h3>Update Profile</h3>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="input-wrapper">
+                <h4>PERSONAL INFORMATION:-</h4>
+            </div>
+        </div>
+         <div class="col s12">
+            <div class="input-wrapper">
+                <input type="text" id="m_nid" placeholder="NID" readonly/>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="input-wrapper">
+                <input type="text" id="name" placeholder="Name"/>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="input-wrapper">
+                <input type="number" id="phno" placeholder="Contact Number"/>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="input-wrapper">
+                <input type="text" id="email" placeholder="Email"/>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="input-wrapper">
+                <input type="text" id="address" placeholder="Address"/>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="input-wrapper">
+                <input type="text" id="merchant_landmark" placeholder="Landmark"/>
+            </div>
+        </div>
+        <div class = "col s12" style="margin-bottom: 20px;">
+            <div class="input-wrapper">
+            <select id="distt" class="select2 district-cls">
+               
+            </select>
+            </div>
+         </div>
+         <div class = "col s12" style="margin-bottom: 20px;">
+            <div class="input-wrapper">
+            <select id="police_station" class="select2 district-cls">
+               <option value = "" disabled selected>Select District First</option>
+            </select>
+            </div>
+         </div>
+
+         <div class="col s12">
+            <div class="input-wrapper">
+                <h4>COMPANY INFORMATION</h4>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="input-wrapper">
+                <input type="text" id="company" placeholder="company"/>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="input-wrapper">
+                <input type="text" id="web" placeholder="Website Name"/>
+            </div>
+        </div>
+
+         <div class="col s12">
+            <div class="input-wrapper">
+                <h4>PAYMENT INFORMATION</h4>
+            </div>
+        </div>
+         <div class="col s12">
+            <div class="input-wrapper">
+                <input type="text" id="baccName" placeholder="Bank A/C Name"/>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="input-wrapper">
+                <input type="text" id="bAccno" placeholder="Bank Account No."/>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="input-wrapper">
+                <input type="text" id="bName" placeholder="Bank Name"/>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="input-wrapper">
+                <input type="text" id="bBranch" placeholder="Bank Branch"/>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="input-wrapper">
+                <input type="text" id="brouting" placeholder="Bank Routing no"/>
+            </div>
+        </div>
+        <div class = "col s12" style="margin-bottom: 20px;">
+            <div class="input-wrapper">
+            <select name="mobile_banking_type" id="mobile_banking_type">
+                <option value="">Select type</option>
+                <option   value="bkash">Bkash</option>
+                <option  value="nogod">Nogod</option>
+                <option  value="rocket">Rocket</option>
+            </select>
+            </div>
+         </div>
+
+         <div class="col s12">
+            <div class="input-wrapper">
+                <input type="text" id="mobile_banking_no" placeholder="mobile banking no."/>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="input-wrapper">
+                <h4>OTHER INFORMATION</h4>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="input-wrapper">
+                <select id="office" class="select2 office-cls">
+               
+                </select>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="input-wrapper">
+                <select name="package" id="package">
+                    <option value="">Select Package</option>
+                    <option value="15">Regular</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="col s12">
+            <div class="input-wrapper">
+                <input type="text" id="ref_code" placeholder="Referral code if any.."/>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="input-wrapper">
+                <input type="file" id="logo" placeholder="Upload logo"/>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="input-wrapper">
+                <button  id="updateprofile" >Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="APPS/profile/modules/profile.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>

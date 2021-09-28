@@ -50,6 +50,7 @@ $(function() {
         items: 1,
         dots: false
     });
+    document.getElementById("cname").innerHTML = userConfig.company;
 
      // Girls
     $(".girl-slide").owlCarousel({
@@ -112,6 +113,11 @@ $(function() {
 
 });
 
+$('#logout').on('click',doLogout);
+$('#place_order').on('click',checkProfile);
+
+
+
 //cart
 jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
     jQuery('.quantity').each(function() {
@@ -145,5 +151,26 @@ jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</di
       });
 
     });
+
+    function doLogout(){
+        localStorage.clear();
+        window.location.href = "#/login";
+    }
+
+    function checkProfile(){
+        if(userConfig.office == "" || userConfig.address == "" || userConfig.district == "" || userConfig.police_station == "" || userConfig.company == "" || userConfig.package == ""){
+            swal({
+                title: "Failure!",
+                text: "Please Fill all the Mandatory Details on your Profile first",
+                icon: "error",
+                button: "Ok",
+              });
+          window.setTimeout(function() {
+            window.location.href = "#/profile";
+              }, 1000);
+        }else{
+            window.location.href = "#/place_order";  
+        }
+      }
 
     

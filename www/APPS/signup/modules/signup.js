@@ -8,8 +8,14 @@
     $('.btm-mnu').hide();
     $('.sidebar').hide();
     $('.content-right').hide();
+    // $('.modal').modal();
     $('#signup').on('click',doRegister);
   }
+
+//   $(document).ready(function () {
+//     $('.modal').modal();
+// }
+// )
 
   function doRegister(){
     var name = $('#name').val();
@@ -19,6 +25,8 @@
     //   alert('Please provide the valid phone no.');
     //   return false;
     // }
+    if($('input[name="tc"]').is(':checked'))
+{
     var form = new FormData();
     form.append("name", name);
     form.append("email", email);
@@ -54,6 +62,16 @@
 }
       // localStorage.setItem('userConfig', btoa(JSON.stringify(res)));
     })
+  }else{
+    swal({
+      title: "Failure!",
+      // text: o.message,
+      html: true,
+      text: 'Please read and accept the Terms & Conditions first.',
+      icon: "warning",
+      button: "OK",
+    });
+  }
 
 
   }

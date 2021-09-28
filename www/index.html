@@ -27,13 +27,13 @@
                 <a href="#/main"><img src="img/logo.png" class="logo-img"></a>
             </div>
             <div class="col s3">
-                <div class="content-right">
+                <!-- <div class="content-right">
                     <a href="#slide-out-cart" data-activates="slide-out-cart" class="sidebar-search"><i class="fa fa-search"></i></a>
                     <a href="#slide-out-right" data-activates="slide-out-right" class="sidebar-cart">
                         <i class="fa fa-bell"></i>
                         <sup>3</sup>
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -46,14 +46,12 @@
         <li class="">
             <div class="collapsible-header user">
                 <i class="fa fa-user profile-icon"></i>
-                <p class="name-txt">Avijit Pal<span><i class="fa fa-angle-right right"></i></span></p>
+                <p class="name-txt"><b id="cname">Menu</b><span><i class="fa fa-angle-right right"></i></span></p>
             </div>
-            <div class="collapsible-body" style="display: none;">
+            <div class="collapsible-body" style="display: block;">
                 <ul>
-                    <li><a href="#/profile"><i class="fa fa-user"></i>My Account</a></li>
-                    <li><a href="#/order-purchase"><img src="img/icon/order-purchase.png">Order Purchase</a></li>
-                    <li><a href="#/order-sale"><img src="img/icon/order-sale.png">Order Sales</a></li>
-                    <li><a href="#/user/logout"><i class="fa fa-share"></i>Log Out</a></li>
+                    <li><a href="#/profile"><i class="fa fa-user"></i>Profile</a></li>
+                    <li><a id="logout"><i class="fa fa-share"></i>Log Out</a></li>
                 </ul>
             </div>
         
@@ -86,8 +84,8 @@
             <div class="col s5">
                 <ul>
                     <li><a href="#/main" class="btm-link on-load ripple"><i class="fa fa-home"></i></a></li>
-                    <li><a href="#" class="ripple"><i class="fa fa-th"></i></a></li>
-                    <li><a href="#/history" class="ripple"><i class="fa fa-history"></i></a></li>
+                    <li><a href="#order_history" class="ripple"><i class="fa fa-list"></i></a></li>
+                    <li><a href="#/payment_history" class="ripple"><i class="fa fa-ticket"></i></a></li>
                     
                 </ul>
             </div>
@@ -96,13 +94,14 @@
             </div>
             <div class="col s5">
                 <ul>
-                    <li><a href="#" class="btm-link on-load ripple"><i class="fa fa-map-marker"></i></a></li>
-                    <li><a href="#" class="ripple"><i class="fa fa-comments"></i></a></li>
-                    <li><a href="#" class="ripple"><i class="fa fa-cog"></i></a></li>
+                    <li><a href="#current_order" class="btm-link on-load ripple"><i class="fa fa-bar-chart"></i></a></li>
+                    <li><a href="#payment_list" class="ripple"><i class="fa fa-money"></i></a></li>
+                    <li><a href="#change_password" class="ripple"><i class="fa fa-cog"></i></a></li>
                     
                 </ul>
             </div>
-            <a href="#/place_order" class="ripple footer-plus"><i class="fa fa-plus"></i></a>
+            <a id="place_order" class="ripple footer-plus"><i class="fa fa-plus"></i></a>
+            <!-- <a href="#/place_order" class="ripple footer-plus"><i class="fa fa-plus"></i></a> -->
             </div>
         </div>
     </div>
@@ -117,6 +116,7 @@
     <script src="js/main.js"></script>
     <script src="js/dokume/config.js"></script>
     <script src="js/dokume/core.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
 
   <!---------ROUTING-------------->

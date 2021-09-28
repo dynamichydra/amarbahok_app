@@ -31,13 +31,14 @@
     <div class="row">
         <div class="col s12">
             <div class="welcome-div">
-                <h1>Welcome, <span id="uname"></span><i class="fa fa-smile-o" aria-hidden="true"></i></h1>
+                <!-- <h1>Welcome, <span id="uname"></span><i class="fa fa-smile-o" aria-hidden="true"></i></h1> -->
+                <h1>Welcome, <span id="uname"></span></h1>
             </div>
         </div>
         <div class="col s6">
             <div class="block" style="background-color: #cc0000;">
                 <div style="text-align: center;margin-top: 5px;">
-                    <span id="torder" class="counter-anim" style="color: white;">10</span><br>
+                    <span id="torder" class="counter-anim" style="color: white;">0</span><br>
                     <span class="weight-500" style="color: white;">Total Order</span>
                 </div>
             </div>
@@ -45,7 +46,7 @@
         <div class="col s6">
             <div class="block" style="background-color: #cc0000;">
                 <div style="text-align: center;margin-top: 5px;">
-                    <span class="counter-anim" style="color: white;">10</span><br>
+                    <span id="pcancel" class="counter-anim" style="color: white;">0</span><br>
                     <span class="weight-500" style="color: white;">Parcel Cancelled</span>
                 </div>
             </div>
@@ -53,7 +54,7 @@
         <div class="col s6">
             <div class="block" style="background-color: #cc0000;">
                 <div style="text-align: center;margin-top: 5px;">
-                    <span class="counter-anim" style="color: white;">10</span><br>
+                    <span id="prec" class="counter-anim" style="color: white;">0</span><br>
                     <span class="weight-500" style="color: white;">Parcel Received</span>
                 </div>
             </div>
@@ -61,7 +62,7 @@
         <div class="col s6">
             <div class="block" style="background-color: #cc0000;">
                 <div style="text-align: center;margin-top: 5px;">
-                    <span class="counter-anim" style="color: white;">10</span><br>
+                    <span id="norder" class="counter-anim" style="color: white;">0</span><br>
                     <span class="weight-500" style="color: white;">New Order</span>
                 </div>
             </div>
@@ -69,7 +70,7 @@
         <div class="col s6">
             <div class="block" style="background-color: #cc0000;">
                 <div style="text-align: center;margin-top: 5px;">
-                    <span class="counter-anim" style="color: white;">10</span><br>
+                    <span id="in-trans" class="counter-anim" style="color: white;">0</span><br>
                     <span class="weight-500" style="color: white;">Parcel In-Transit</span>
                 </div>
             </div>
@@ -77,7 +78,7 @@
         <div class="col s6">
             <div class="block" style="background-color: #cc0000;">
                 <div style="text-align: center;margin-top: 5px;">
-                    <span class="counter-anim" style="color: white;">10</span><br>
+                    <span id="pdel" class="counter-anim" style="color: white;">0</span><br>
                     <span class="weight-500" style="color: white;">Parcel Delivered</span>
                 </div>
             </div>
@@ -85,7 +86,7 @@
         <div class="col s6">
             <div class="block" style="background-color: #cc0000;">
                 <div style="text-align: center;margin-top: 5px;">
-                    <span class="counter-anim" style="color: white;">10</span><br>
+                    <span id="pres" class="counter-anim" style="color: white;">0</span><br>
                     <span class="weight-500" style="color: white;">Parcel Rescheduled</span>
                 </div>
             </div>
@@ -93,7 +94,7 @@
         <div class="col s6">
             <div class="block" style="background-color: #cc0000;">
                 <div style="text-align: center;margin-top: 5px;">
-                    <span class="counter-anim" style="color: white;">10</span><br>
+                    <span id="pret" class="counter-anim" style="color: white;">0</span><br>
                     <span class="weight-500" style="color: white;">Parcel Returned</span>
                 </div>
             </div>
@@ -102,7 +103,7 @@
         <div class="col s6">
             <div class="block" style="background-color: #cc0000;">
                 <div style="text-align: center;margin-top: 5px;">
-                    <span style="color: white;">TK.<span class="counter-anim" style="color: white;">10</span></span><br>
+                    <span style="color: white;">TK.<span class="counter-anim" style="color: white;" id="tsales">0</span></span><br>
                     <span class="weight-500" style="color: white;">Total Sales</span>
                 </div>
             </div>
@@ -110,7 +111,7 @@
         <div class="col s6">
             <div class="block" style="background-color: #cc0000;">
                 <div style="text-align: center;margin-top: 5px;">
-                    <span style="color: white;">TK.<span class="counter-anim" style="color: white;">10</span></span><br>
+                    <span style="color: white;">TK.<span class="counter-anim" style="color: white;" id="tpaid">0</span></span><br>
                     <span class="weight-500" style="color: white;">Total Received Amount</span>
                 </div>
             </div>
@@ -118,7 +119,7 @@
         <div class="col s6">
             <div class="block" style="background-color: #cc0000;">
                 <div style="text-align: center;margin-top: 5px;">
-                    <span style="color: white;">TK.<span class="counter-anim" style="color: white;">10</span></span><br>
+                    <span style="color: white;">TK.<span class="counter-anim" style="color: white;" id="tdcpaid">0</span></span><br>
                     <span class="weight-500" style="color: white;">Total DC Paid</span>
                 </div>
             </div>
@@ -126,7 +127,7 @@
         <div class="col s6">
             <div class="block" style="background-color: #cc0000;">
                 <div style="text-align: center;margin-top: 5px;">
-                    <span style="color: white;">TK.<span class="counter-anim" style="color: white;">10</span></span><br>
+                    <span style="color: white;">TK.<span class="counter-anim" style="color: white;" id="tdue">0</span></span><br>
                     <span class="weight-500" style="color: white;">Total Due Amount</span>
                 </div>
             </div>

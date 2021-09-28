@@ -43,7 +43,7 @@
                     // button: "Aww yiss!",
                   });
               window.setTimeout(function() {
-                  // window.location.replace(site_url+"admin/user/change_pass");
+                window.location.href = "#/change_password";
                   }, 1000);
             }
             localStorage.setItem('userConfig', btoa(JSON.stringify(res.userdetails)));

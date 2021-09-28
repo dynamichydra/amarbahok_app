@@ -51,7 +51,7 @@
         <p>Consignment No:- ${alllist[i].consignment_id}</p>
         <p>Receivable Amount:- ${paytomerch}</p>
         <p>Invoice No:- <span id = inv${[i]}></span></p>
-        <p>Date-Time:- ${alllist[i].timestamp}<span style ="float:right;">Details..</span></p>
+        <p>Date-Time:- ${alllist[i].timestamp}<span style ="float:right;" onclick="getfindetail(${alllist[i].id})">Details..</span></p>
     </div>`;
       }
       $("#fin-item").html(htm);
@@ -73,3 +73,8 @@
 }
 
 })();
+
+function getfindetail(ccid){
+  localStorage.setItem('finid', ccid);
+  window.location.href = "#/finance_detail";
+}

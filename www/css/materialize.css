@@ -6002,7 +6002,7 @@ textarea.materialize-textarea {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #9e9e9e;
-  border-radius: 0;
+  border-radius: 5px;
   outline: none;
   height: 3rem;
   width: 100%;
@@ -6964,7 +6964,7 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::before {
 /* Select Field
    ========================================================================== */
 select {
-  display: none;
+  display: block;
 }
 
 select.browser-default {

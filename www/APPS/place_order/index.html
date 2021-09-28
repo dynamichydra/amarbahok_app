@@ -6,6 +6,19 @@
     .manuTab h3{
         color: #99211d;
     }
+    select {
+    /* background-color: rgba(255, 255, 255, 0.9); */
+    width: 101% !important;
+    /* padding: 5px 0px 5px 20px !important; */
+    border: #99211d 1px solid !important;
+    /* border-radius: 2px; */
+    height: 3.8rem;
+    /* margin-left: 10px !important; */
+    border-radius: 5px;
+}
+hr.total_partition {
+  border: 1px solid green;
+}
 </style>
 <div class="container"> 
     <div class="row">
@@ -14,34 +27,128 @@
                 <h3>Place Order</h3>
             </div>
         </div>
+
+        <div class="col s12">
+            <div class="input-wrapper">
+                <h4>SHIPPING DETAILS</h4>
+            </div>
+        </div>
          <div class="col s12">
             <div class="input-wrapper">
-                <input type="text" id="name" placeholder="abc"/>
+                <input type="text" id="consignment_id" placeholder="Consignment ID" readonly/>
             </div>
         </div>
         <div class="col s12">
             <div class="input-wrapper">
-                <input type="text" id="email" placeholder="abc"/>
+                <input type="text" id="recipient_name" placeholder="Recipient Name"/>
             </div>
         </div>
         <div class="col s12">
             <div class="input-wrapper">
-                <input type="text" id="password" placeholder="abc"/>
+                <input type="number" id="recipient_number" placeholder="Recipient Number"/>
             </div>
         </div>
         <div class="col s12">
             <div class="input-wrapper">
-                <input type="text" id="state" placeholder="abc"/>
+                <input type="text" id="recipient_address_shipping" placeholder="Recipient Address"/>
+            </div>
+        </div>
+        <div class = "col s12" style="margin-bottom: 20px;">
+            <div class="input-wrapper">
+            <select id="distt" class="select2 district-cls">
+               
+            </select>
+            </div>
+         </div>
+         <div class = "col s12" style="margin-bottom: 20px;">
+            <div class="input-wrapper">
+            <select id="police_station" class="select2 district-cls">
+               <option value = "" disabled selected>Select District First</option>
+            </select>
+            </div>
+         </div>
+
+         <div class="col s12">
+            <div class="input-wrapper">
+                <h4>CONSIGNMENT DETAILS</h4>
+            </div>
+        </div>
+         <div class="col s12">
+            <div class="input-wrapper">
+                <input type="text" id="product_id" placeholder="Product ID / Merchant Order ID"/>
+            </div>
+        </div>
+        <div class = "col s12" style="margin-bottom: 20px;">
+            <div class="input-wrapper">
+            <select name="category" id="category">
+               <option value="accessories">Accessories</option>
+                            <option  value="cloths">Cloths</option>
+                            <option  value="cosmetics">Cosmetics</option>
+                            <option  value="electronics">Electronics</option>
+                            <option  value="fragile">Fragile</option>
+                            <option  value="grocery">Grocery</option>
+                            <option  value="liquid">Liquid</option>
+                            <option  value="shoe">Shoe</option>
+                            <option  value="others">Others</option>
+            </select>
+            </div>
+         </div>
+
+         <div class="col s12">
+            <div class="input-wrapper">
+                <input type="text" id="parcel_wt" placeholder="Parcel Weight (Kg)"/>
             </div>
         </div>
         <div class="col s12">
             <div class="input-wrapper">
-                <input type="text" id="city" placeholder="abc"/>
+                <input type="text" id="parcel_price" placeholder="Parcel Price"/>
             </div>
         </div>
         <div class="col s12">
             <div class="input-wrapper">
-                <input type="text" id="street" placeholder="abc"/>
+                <input type="text" id="cash_collect" placeholder="Cash Collection Amount"/>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="input-wrapper">
+        <input type="text" id="notes" placeholder="Notes"/>
+        <input type="hidden" id="customeridd" name="customeridd" value="">
+        <input type="hidden" id="promo_code" name="promo_code" value="">
+        <input type="hidden" id="package_name" name="package_name" value="">
+        <input type="hidden" name="service_area" id="service_area" value="">
+        <input type="hidden" name="service_ps" id="service_ps" value="">
+        <input type="hidden" name="service_dis" id="service_dis" value="">
+        <input type="hidden" name="select_branch" id="select_branch" value="">
+        <input type="hidden" name="total_price" id="total_price" value="">
+        <input type="hidden" name="total_cod_price" id="total_cod_price" value="">
+        <input type="hidden" name="merch_pay" id="merch_pay" value="">
+        <input type="hidden" id="excharge" name="excharge" value="">
+            </div>
+        </div>
+        
+        <div class="col s12">
+            <div class="input-wrapper">
+                <h4 style="float: left;" id="">Cash Collection:-</h4><b style="float: right;" id="tcash_collect">0</b>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="input-wrapper">
+                <h4 style="float: left;">Delivery Charge:-</h4><b style="float: right;"  id="td_charge">0</b>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="input-wrapper">
+                <h4 style="float: left;">COD Charge:-</h4><b style="float: right;"  id="tcod_charge">0</b>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="input-wrapper">
+        <hr class="total_partition ">
+             </div>
+        </div>
+        <div class="col s12" style="margin-bottom: 20px;">
+            <div class="input-wrapper">
+                <h4 style="float: left;">Total Payable Amount:-</h4><b style="float: right;" id="tpayable_amount">0</b>
             </div>
         </div>
 
@@ -53,3 +160,4 @@
     </div>
 </div>
 <script src="APPS/place_order/modules/order.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>

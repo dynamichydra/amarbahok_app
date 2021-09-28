@@ -29,7 +29,7 @@
         <p>Consignment No:- ${alltkt[i].consignment}</p>
         <p>Subject:- ${alltkt[i].subject}</p>
         <p>Status :- ${alltkt[i].status}<br>${alltkt[i].timer}</p>
-        <p>Message :-${alltkt[i].comment}<span style ="float:right;">Details..</span></p>
+        <p>Message :-${alltkt[i].comment}<span style ="float:right;" onclick="gettktdetail(${alltkt[i].id})">Details..</span></p>
     </div>`;
       }
       $("#tkt-item").html(htm);
@@ -38,3 +38,8 @@
   }
 
 })();
+
+function gettktdetail(ccid){
+  localStorage.setItem('tktidd', ccid);
+  window.location.href = "#/tkt_detail";
+}
