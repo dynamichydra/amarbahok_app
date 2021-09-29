@@ -13,7 +13,7 @@
 
   function getUser(){
     if(localStorage.getItem("userConfig") != null){
-      console.log(userConfig.id);
+      console.log(userConfig);
       document.getElementById("uname").innerHTML = userConfig.company;
       var userid = userConfig.id;
 

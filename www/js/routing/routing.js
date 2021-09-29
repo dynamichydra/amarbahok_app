@@ -53,8 +53,13 @@ crossroads.bypassed.add(function(request) {
   get_param1 = null;
   get_param2 = null;
 
+  if(localStorage.getItem("userConfig") != null){
   $('#main').load('APPS/main/index.html');
   setActive('main');
+  }else{
+    $('#main').load('APPS/signup/index.html');
+  setActive('login');
+  }
 
   //elq('.header-back-img').style.display = 'none';
   //$('#header').html('<div class="container"> <div id="camName" class="hidden-sm-down">DokuMe - <span class="meOrange">Cam</span></div> <img src="img/logo/dokume.jpg" class="pull-right"> </div>');

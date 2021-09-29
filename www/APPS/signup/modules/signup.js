@@ -45,7 +45,7 @@
         window.setTimeout(function() {
             // window.location.replace(site_url+"#/login");
             window.location.href = "#/login";
-          }, 4000);
+          }, 2000);
     }
   });
 } else {
