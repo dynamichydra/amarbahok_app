@@ -61,6 +61,8 @@
             }
             
       } else {
+        document.getElementById("login").disabled = false;
+    document.getElementById("login").innerHTML = "LOGIN";
           swal({
                 title: "Failure!",
                 text: "Email or Password didn't match!",
