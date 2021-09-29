@@ -11,6 +11,7 @@ crossroads.addRoute('{page}/{subPage}/:param2:/:param3:', function(page, subPage
   $('#main').load('APPS/' + page + '/' + subPage + '.html');
 
   setActive(app_name);
+  $('#slide-out').sideNav('hide');
 
   // if (page !== 'main') {
   //   elq('.header-back-img').style.display = 'block';
@@ -32,6 +33,7 @@ crossroads.addRoute('{page}', function(page) {
   $('#main').load("APPS/" + page + "/index.html");
 
   setActive(page);
+  $('#slide-out').sideNav('hide');
 
   // if (page !== 'main') {
   //   elq('.header-back-img').style.display = 'block';
@@ -60,6 +62,8 @@ crossroads.bypassed.add(function(request) {
     $('#main').load('APPS/signup/index.html');
   setActive('login');
   }
+
+  $('#slide-out').sideNav('hide');
 
   //elq('.header-back-img').style.display = 'none';
   //$('#header').html('<div class="container"> <div id="camName" class="hidden-sm-down">DokuMe - <span class="meOrange">Cam</span></div> <img src="img/logo/dokume.jpg" class="pull-right"> </div>');
