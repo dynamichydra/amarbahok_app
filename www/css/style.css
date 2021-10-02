@@ -1966,7 +1966,7 @@ footer p {
     border-top-right-radius: 30px;
 }
 .tab-btm-menu ul li a {
-    font-size: 35px;
+    font-size: 26px;
     display: block;
     line-height: 1.3;
     padding: 6px 5px;
@@ -2517,16 +2517,6 @@ form.is-editing .btn-edit {
 }
 @media(max-width: 400px){
     .tab-btm-menu ul li a{
-           padding: 7px 16px; 
-    }
-}
-@media(max-width: 350px){
-    .tab-btm-menu ul li a{
-           padding: 7px 13px; 
-    }
-}
-@media(max-width: 300px){
-    .tab-btm-menu ul li a{
-           padding: 7px 8px; 
+           padding: 7px; 
     }
 }
