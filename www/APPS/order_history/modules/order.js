@@ -9,35 +9,51 @@
     $('.btm-mnu').show();
     $('.sidebar').show();
     $('.content-right').show();
-    setEvents();
+    // setEvents();
     getConsList();
+    $('#showmore').on('click',setEvents);
   }
 
   function setEvents(){
-    var lastScrollTop = 0;    
+    // var lastScrollTop = 0;    
 
-    window.onscroll = function(ev) {
+    // window.onscroll = function(ev) {
 
-      if($(document).height()==$(window).scrollTop()+$(window).height()){
+      // if($(document).height()==$(window).scrollTop()+$(window).height()){
         // alert('I am at the bottom');
         addToConsList();
         // Here goes your code.
-    }
-
-    // var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-    //    if (st > lastScrollTop){
-    //       // downscroll code
-    //       if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
-    //         console.log("you're at the bottom of the page");
-    //         addToConsList();
-    //     }
-    //    }
-
-    //    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    // }
 
       
-  };
+  // };
   }
+
+  // function setEvents(){
+  //   var lastScrollTop = 0;    
+
+  //   window.onscroll = function(ev) {
+
+  //     if($(document).height()==$(window).scrollTop()+$(window).height()){
+  //       // alert('I am at the bottom');
+  //       addToConsList();
+  //       // Here goes your code.
+  //   }
+
+  //   // var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+  //   //    if (st > lastScrollTop){
+  //   //       // downscroll code
+  //   //       if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+  //   //         console.log("you're at the bottom of the page");
+  //   //         addToConsList();
+  //   //     }
+  //   //    }
+
+  //   //    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+
+      
+  // };
+  // }
 
   function getConsList(){
     if(localStorage.getItem("userConfig") != null){

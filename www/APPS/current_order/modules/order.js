@@ -9,34 +9,24 @@
     $('.btm-mnu').show();
     $('.sidebar').show();
     $('.content-right').show();
-    setEvents();
+    // setEvents();
     getFinanceList();
+    $('#showmore').on('click',setEvents);
   }
 
   function setEvents(){
-    var lastScrollTop = 0;    
+    // var lastScrollTop = 0;    
 
-    window.onscroll = function(ev) {
+    // window.onscroll = function(ev) {
 
-      if($(document).height()==$(window).scrollTop()+$(window).height()){
+      // if($(document).height()==$(window).scrollTop()+$(window).height()){
         // alert('I am at the bottom');
         addTogetFinanceList();
         // Here goes your code.
-    }
-
-    // var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-    //    if (st > lastScrollTop){
-    //       // downscroll code
-    //       if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
-    //         console.log("you're at the bottom of the page");
-    //         addToConsList();
-    //     }
-    //    }
-
-    //    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    // }
 
       
-  };
+  // };
   }
 
   function getFinanceList(){
@@ -80,9 +70,9 @@
         htm +=`<div class="items">
         <h3 style="color:${statColor}">${status}</h3>
         <p>Consignment No: ${alllist[i].consignment_id}</p>
-        <p>Date-Time: <span id = invdt${[i]}></p>
         <p>Receivable Amount: ${paytomerch}</p>
-        <p>Invoice No: <span id = inv${[i]}></span></span><a style ="float:right;color:blue;" onclick="getfindetail(${alllist[i].id})">Detail</a></p>
+        <p>Invoice No: <span id = inv${[i]}></span></p>
+        <p>Date-Time: <span id = invdt${[i]}></span><a style ="float:right;color:blue;" onclick="getfindetail(${alllist[i].id})">Detail</a></p>
     </div>`;
       }
       $("#fin-item").html(htm);

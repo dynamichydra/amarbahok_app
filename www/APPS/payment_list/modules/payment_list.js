@@ -9,22 +9,23 @@
     $('.btm-mnu').show();
     $('.sidebar').show();
     $('.content-right').show();
-    setEvents();
+    // setEvents();
     getpymntList();
+    $('#showmore').on('click',setEvents);
   }
 
   function setEvents(){
-    var lastScrollTop = 0;    
+    // var lastScrollTop = 0;    
 
-    window.onscroll = function(ev) {
+    // window.onscroll = function(ev) {
 
-      if($(document).height()==$(window).scrollTop()+$(window).height()){
+    //   if($(document).height()==$(window).scrollTop()+$(window).height()){
         // alert('I am at the bottom');
         addTogetpymntList();
         // Here goes your code.
-    }
+  //   }
       
-  };
+  // };
   }
 
   function getpymntList(){

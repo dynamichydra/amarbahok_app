@@ -39,10 +39,10 @@
       <p><b>Note: </b>${res.cdata[0].instructions}</p>
       <p><b>Cash Collection: </b>${res.cdata[0].cash_collection}<span style="float:right;"><b>Parcel Value: </b>${res.cdata[0].total_price_product}</span></p>
       <p><b>Delivery Charge: </b>${res.cdata[0].total_price}<span style="float:right;"><b>COD Charge: </b>${res.cdata[0].total_cod_charge}</span></p></p>
-      <p><b>Status: </b>${dstatus}</p><br><br>
+      <p><b>Parcel Weight: </b>${res.cdata[0].total_weight}<span style="float:right;"><b>Status: </b>${dstatus}</span></p><br><br>
       <center>
       <button class="btn btn-default btn-icon-anim btn-square list-button" onclick="editFunction(${res.cdata[0].id})">EDIT</i></button>&nbsp;
-      <button class="btn btn-success btn-icon-anim btn-square list-button" onclick="ticketFunction(${res.cdata[0].id})">RAISE TICKET</button>&nbsp;
+      <button class="btn btn-success btn-icon-anim btn-square list-button" onclick="ticketFunction(${res.cdata[0].id})">RAISE TICKET</button>&nbsp;<br><br>
       <button class="btn btn-success btn-icon-anim btn-square list-button" onclick="trackFunction(${res.cdata[0].id})">TRACK</i></button>
       </center>`;
       }else{
@@ -53,8 +53,8 @@
       <p><b>Shipping Details: </b>${res.cdata[0].shipping_name} <br> ${res.cdata[0].recipient_address} <br> ${res.cdata[0].recipient_number}</p>
       <p><b>Note: </b>${res.cdata[0].instructions}</p>
       <p><b>Cash Collection: </b>${res.cdata[0].cash_collection}<span style="float:right;"><b>Parcel Value: </b>${res.cdata[0].total_price_product}</span></p>
-      <p><b>Delivery Charge: </b>${res.cdata[0].total_price}<span style="float:right;"><b>COD Charge: </b>${res.cdata[0].total_cod_charge}</span></p></p>
-      <p><b>Status: </b>${dstatus}</p><br><br>
+      <p><b>Delivery Charge: </b>${res.cdata[0].total_price}<span style="float:right;"><b>COD Charge: </b>${res.cdata[0].total_cod_charge}</span></p>
+      <p><b>Parcel Weight: </b>${res.cdata[0].total_weight}<span style="float:right;"><b>Status: </b>${dstatus}</span></p><br><br>
       <center>
       <button class="btn btn-success btn-icon-anim btn-square list-button" onclick="ticketFunction(${res.cdata[0].id})">RAISE TICKET</button>&nbsp;
       <button class="btn btn-success btn-icon-anim btn-square list-button" onclick="trackFunction(${res.cdata[0].id})">TRACK</button>
