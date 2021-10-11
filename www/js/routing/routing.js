@@ -59,7 +59,7 @@ crossroads.bypassed.add(function(request) {
   $('#main').load('APPS/main/index.html');
   setActive('main');
   }else{
-    $('#main').load('APPS/signup/index.html');
+    $('#main').load('APPS/login/index.html');
   setActive('login');
   }
 

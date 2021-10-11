@@ -41,23 +41,26 @@
       var delivery_status = capitalizeFirstLetter(res.findata[0].delivery_status);
 
       invoiceNum = getinvoicenum(res.findata[0].consignment_id);
+
+      var t = mysqlDatetoJs(res.findata[0].timestamp);
+        var d = prettyDate(t);
+
     var htm = "";
     htm +=`<div class="col s12">
-    <p><b>Payment Status:-</b> ${payment_status_merchant}</p>
-    <p><b>Order Date:- </b>${res.findata[0].timestamp}</p>
-    <p><b>Status:- </b>${delivery_status}</p>
-    <p><b>Consignment ID:- </b>${res.findata[0].consignment_id}</p>
-    <p><b>Shipping Details:- </b>${res.findata[0].name} <br> ${res.findata[0].recipient_address} <br> ${res.findata[0].contact}</p>
-    <p><b>Cash Collection:- </b>${res.findata[0].cash_collection}</p>
-    <p><b>Delivery Charge:- </b>${res.findata[0].delivery_charge}</p>
-    <p><b>COD Charge:- </b>${res.findata[0].total_cod_charge}</p>
-    <p><b>Return Charge:- </b>${returnCharge}</p>
-    <p><b>Less Paid:- </b>${res.findata[0].less_paid_return}</p>
-    <p><b>Collected Amount:- </b>${res.findata[0].amount_paid}</p>
-    <p><b>Receivable Amount:- </b>${res.findata[0].paytomerch - res.findata[0].less_paid_return}</p>
-    <p><b>Invoice No.:- </b><span id = "invno">${res.findata[0].comment}</span></p>
-    <p><b>Invoice Date/Time:- </b><span id = "invdate">${res.findata[0].comment}</span></p>
-
+    <p><b>Payment Status:</b> ${payment_status_merchant}</p>
+    <p><b>Order Date: </b>${d}</p>
+    <p><b>Status: </b>${delivery_status}</p>
+    <p><b>Consignment ID: </b>${res.findata[0].consignment_id}</p>
+    <p><b>Shipping Details: </b>${res.findata[0].name} <br> ${res.findata[0].recipient_address} <br> ${res.findata[0].contact}</p>
+    <p><b>Cash Collection: </b>${res.findata[0].cash_collection}<span style="float:right;"><b>Delivery Charge: </b>${res.findata[0].delivery_charge}</span></p>
+    
+    <p><b>COD Charge: </b>${res.findata[0].total_cod_charge}<span style="float:right;"><b>Return Charge: </b>${returnCharge}</span></p>
+    
+    <p><b>Less Paid: </b>${res.findata[0].less_paid_return}<span style="float:right;"><b>Collected Amount: </b>${res.findata[0].amount_paid}</span></p>
+    
+    <p><b>Receivable Amount: </b>${res.findata[0].paytomerch - res.findata[0].less_paid_return}<span style="float:right;"><b>Invoice No.: </b><span id = "invno">${res.findata[0].comment}</span></p>
+    <p><b>Invoice Date/Time: </b><span id = "invdate">${res.findata[0].comment}</span></p>
+      <br>
     <center>
       <button class="btn btn-success btn-icon-anim btn-square list-button" onclick="ticketFunction(${res.findata[0].id})">RAISE TICKET</button>
       </center>
@@ -77,8 +80,12 @@
 
     DM_CORE.apiForm('invoicenumber',form,function(res){
       // console.log(res.invid[0]);
+
+      var t = mysqlDatetoJs(res.invid[0].date);
+        var d = prettyDate(t);
+        var tme= formatAMPM(t);
       $('#invno').html(res.invid[0].invoice_no);
-      $('#invdate').html(res.invid[0].date);
+      $('#invdate').html(d+' '+tme);
     })
 }
 
@@ -92,4 +99,27 @@ function ticketFunction(ccbid){
   localStorage.setItem('considtkt', ccbid);
   window.location.href = "#/cons_tkt";
 }
+
+function mysqlDatetoJs(mysqlTimeStamp){
+  var t = mysqlTimeStamp.split(/[- :]/);
+      return new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+  }
+
+  function prettyDate(date) {
+    var months =  ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    return date.getUTCDate() + ', ' + months[date.getUTCMonth()] 
+    + ' ' + date.getUTCFullYear();
+    }
+    function formatAMPM(date) {
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      var ampm = hours >= 12 ? 'pm' : 'am';
+      hours = hours % 12;
+      hours = hours ? hours : 12; // the hour '0' should be '12'
+      minutes = minutes < 10 ? '0'+minutes : minutes;
+      var strTime = hours + ':' + minutes + ' ' + ampm;
+      return strTime;
+    }
 

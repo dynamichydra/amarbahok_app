@@ -399,6 +399,14 @@ function submitOrder(){
   })
 }
 
+function checkMobile() {
+  if(!$('#recipient_number').val().match('[0-9]{11}'))  {
+              document.getElementById('recipient_number').value = '';
+               alert("Please put 11 digit mobile number");
+               return;
+           }
+}
+
 
 
 

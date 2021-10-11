@@ -2425,8 +2425,8 @@ html input[disabled] {
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
+button::moz-focus-inner,
+input::moz-focus-inner {
   border: 0;
   padding: 0;
 }
@@ -2460,8 +2460,8 @@ input[type="radio"] {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type="number"]::webkit-inner-spin-button,
+input[type="number"]::webkit-outer-spin-button {
   height: auto;
 }
 
@@ -2482,8 +2482,8 @@ input[type="search"] {
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+input[type="search"]::webkit-search-cancel-button,
+input[type="search"]::webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -5972,13 +5972,13 @@ label {
 /* Text Inputs + Textarea
    ========================================================================== */
 /* Style Placeholders */
-::-webkit-input-placeholder {
+::webkit-input-placeholder {
   color: #d1d1d1;
 }
-::-moz-placeholder {
+::moz-placeholder {
   color: #d1d1d1;
 }
-:-ms-input-placeholder {
+:ms-input-placeholder {
   color: #d1d1d1;
 }
 ::placeholder {
@@ -7157,7 +7157,7 @@ select:disabled {
   filter: alpha(opacity=0);
 }
 
-.file-field input[type=file]::-webkit-file-upload-button {
+.file-field input[type=file]::webkit-file-upload-button {
   display: none;
 }
 
@@ -7227,13 +7227,13 @@ input[type=range] {
   -webkit-appearance: none;
 }
 
-input[type=range]::-webkit-slider-runnable-track {
+input[type=range]::webkit-slider-runnable-track {
   height: 3px;
   background: #c2c0c2;
   border: none;
 }
 
-input[type=range]::-webkit-slider-thumb {
+input[type=range]::webkit-slider-thumb {
   -webkit-appearance: none;
   border: none;
   height: 14px;
@@ -7247,7 +7247,7 @@ input[type=range]::-webkit-slider-thumb {
   transition: .3s;
 }
 
-input[type=range]:focus::-webkit-slider-runnable-track {
+input[type=range]:focus::webkit-slider-runnable-track {
   background: #ccc;
 }
 
@@ -7257,13 +7257,13 @@ input[type=range] {
   /*required for proper track sizing in FF*/
 }
 
-input[type=range]::-moz-range-track {
+input[type=range]::moz-range-track {
   height: 3px;
   background: #ddd;
   border: none;
 }
 
-input[type=range]::-moz-range-thumb {
+input[type=range]::moz-range-thumb {
   border: none;
   height: 14px;
   width: 14px;
@@ -7272,16 +7272,16 @@ input[type=range]::-moz-range-thumb {
   margin-top: -5px;
 }
 
-input[type=range]:-moz-focusring {
+input[type=range]:moz-focusring {
   outline: 1px solid #fff;
   outline-offset: -1px;
 }
 
-input[type=range]:focus::-moz-range-track {
+input[type=range]:focus::moz-range-track {
   background: #ccc;
 }
 
-input[type=range]::-ms-track {
+input[type=range]::ms-track {
   height: 3px;
   background: transparent;
   border-color: transparent;
@@ -7290,15 +7290,15 @@ input[type=range]::-ms-track {
   color: transparent;
 }
 
-input[type=range]::-ms-fill-lower {
+input[type=range]::ms-fill-lower {
   background: #777;
 }
 
-input[type=range]::-ms-fill-upper {
+input[type=range]::ms-fill-upper {
   background: #ddd;
 }
 
-input[type=range]::-ms-thumb {
+input[type=range]::ms-thumb {
   border: none;
   height: 14px;
   width: 14px;
@@ -7306,11 +7306,11 @@ input[type=range]::-ms-thumb {
   background: #26a69a;
 }
 
-input[type=range]:focus::-ms-fill-lower {
+input[type=range]:focus::ms-fill-lower {
   background: #888;
 }
 
-input[type=range]:focus::-ms-fill-upper {
+input[type=range]:focus::ms-fill-upper {
   background: #ccc;
 }
 

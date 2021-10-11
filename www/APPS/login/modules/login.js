@@ -18,6 +18,8 @@
     var pwd = $('#password').val();
     if(email == ''){
       alert('Please provide the email');
+      document.getElementById("login").disabled = false;
+      document.getElementById("login").innerHTML = "LOGIN";
       return false;
     }
     var form = new FormData();

@@ -1619,22 +1619,22 @@ form .button {
     text-align: center;
 }
 
-::-webkit-input-placeholder {
+::webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     color: #555;
 }
 
-::-moz-placeholder {
+::moz-placeholder {
     /* Firefox 19+ */
     color: #555;
 }
 
-:-ms-input-placeholder {
+:ms-input-placeholder {
     /* IE 10+ */
     color: #555;
 }
 
-:-moz-placeholder {
+:moz-placeholder {
     /* Firefox 18- */
     color: #555;
 }
@@ -2213,8 +2213,8 @@ input[type="checkbox"]:checked {
   position: relative;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button
+input[type=number]::webkit-inner-spin-button,
+input[type=number]::webkit-outer-spin-button
 {
   -webkit-appearance: none;
   margin: 0;

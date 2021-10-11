@@ -45,7 +45,7 @@ hr.total_partition {
         </div>
         <div class="col s12">
             <div class="input-wrapper">
-                <input type="number" id="recipient_number" placeholder="Recipient Number"/>
+                <input type="number" id="recipient_number" placeholder="Recipient Number" minlength="11" maxlength="11" onfocusout="checkMobile();"/>
             </div>
         </div>
         <div class="col s12">
@@ -101,12 +101,12 @@ hr.total_partition {
         </div>
         <div class="col s12">
             <div class="input-wrapper">
-                <input type="text" id="parcel_price" placeholder="Parcel Price"/>
+                <input type="number" id="parcel_price" placeholder="Parcel Price"/>
             </div>
         </div>
         <div class="col s12">
             <div class="input-wrapper">
-                <input type="text" id="cash_collect" placeholder="Cash Collection Amount"/>
+                <input type="number" id="cash_collect" placeholder="Cash Collection Amount"/>
             </div>
         </div>
         <div class="col s12">
@@ -128,17 +128,17 @@ hr.total_partition {
         
         <div class="col s12">
             <div class="input-wrapper">
-                <h4 style="float: left;" id="">Cash Collection:-</h4><b style="float: right;" id="tcash_collect">0</b>
+                <h4 style="float: left;" id="">Cash Collection:</h4><b style="float: right;" id="tcash_collect">0</b>
             </div>
         </div>
         <div class="col s12">
             <div class="input-wrapper">
-                <h4 style="float: left;">Delivery Charge:-</h4><b style="float: right;"  id="td_charge">0</b>
+                <h4 style="float: left;">Delivery Charge:</h4><b style="float: right;"  id="td_charge">0</b>
             </div>
         </div>
         <div class="col s12">
             <div class="input-wrapper">
-                <h4 style="float: left;">COD Charge:-</h4><b style="float: right;"  id="tcod_charge">0</b>
+                <h4 style="float: left;">COD Charge:</h4><b style="float: right;"  id="tcod_charge">0</b>
             </div>
         </div>
         <div class="col s12">
@@ -148,7 +148,7 @@ hr.total_partition {
         </div>
         <div class="col s12" style="margin-bottom: 20px;">
             <div class="input-wrapper">
-                <h4 style="float: left;">Total Payable Amount:-</h4><b style="float: right;" id="tpayable_amount">0</b>
+                <h4 style="float: left;">Total Payable Amount:</h4><b style="float: right;" id="tpayable_amount">0</b>
             </div>
         </div>
 
