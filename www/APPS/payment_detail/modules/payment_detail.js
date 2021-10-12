@@ -33,18 +33,18 @@
         if(paymnet[i].deduction_status == "1"){
         returnCharge = paymnet[i].deduction_amount;
         }else{
-          returnCharge = paymnet[i].total_price + paymnet[i].return_extra;
+          returnCharge = parseFloat(paymnet[i].total_price) + parseFloat(paymnet[i].return_extra);
         }
       }else{
         returnCharge = 0;
       }
 
       if(paymnet[i].delivery_status == "delivered"){
-        paidamount = paymnet[i].paytomerch - paymnet[i].less_paid_return;
+        paidamount = parseFloat(paymnet[i].paytomerch) - parseFloat(paymnet[i].less_paid_return);
       }else if(paymnet[i].delivery_status == "returned"){
-        paidamount = paymnet[i].amount_paid - paymnet[i].deduction_amount;
+        paidamount = parseFloat(paymnet[i].amount_paid) - parseFloat(paymnet[i].deduction_amount);
       } else{
-        paidamount = paymnet[i].amount_paid - (paymnet[i].total_price + paymnet[i].total_cod_charge + paymnet[i].return_extra);
+        paidamount = paymnet[i].amount_paid - (parseFloat(paymnet[i].total_price) + parseFloat(paymnet[i].total_cod_charge) + parseFloat(paymnet[i].return_extra));
       }
 
       var t = mysqlDatetoJs(paymnet[i].timestamp);

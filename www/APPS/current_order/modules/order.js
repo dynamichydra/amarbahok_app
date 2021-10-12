@@ -41,7 +41,7 @@
 
     DM_CORE.apiForm('financiallist',form,function(res){
       ++pageNum;
-      // console.log(res);
+      console.log(res);
       var alllist = res.findata;
       var htm = "";
       var paytomerch = "";
@@ -55,7 +55,7 @@
           if(alllist[i].deduction_status == 1){
             paytomerch = alllist[i].amount_paid-parseFloat(alllist[i].deduction_amount);
         }else{
-          paytomerch = parseFloat(alllist[i].amount_paid) - (alllist[i].delivery_charge + parseFloat(alllist[i].total_cod_charge) + parseFloat(alllist[i].return_extra));
+          paytomerch = parseFloat(alllist[i].amount_paid) - (parseFloat(alllist[i].delivery_charge) + parseFloat(alllist[i].return_extra));
         }
         }
 

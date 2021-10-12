@@ -31,7 +31,7 @@
         if(res.findata[0].deduction_status == "1"){
         returnCharge = res.findata[0].deduction_amount;
         }else{
-          returnCharge = res.findata[0].delivery_charge + res.findata[0].return_extra;
+          returnCharge = parseFloat(res.findata[0].delivery_charge) + parseFloat(res.findata[0].return_extra);
         }
       }else{
         returnCharge = 0;
