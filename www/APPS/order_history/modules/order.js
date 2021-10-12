@@ -84,7 +84,7 @@
           scolor="green";
         } else if(allcons[i].delivery_status == 'in-transit'){
           dstatus = capitalizeFirstLetter(allcons[i].delivery_status);
-          scolor="yellow";
+          scolor="#e6b800";
         } else if(allcons[i].delivery_status == 'reschedule'){
           dstatus = capitalizeFirstLetter(allcons[i].delivery_status);
           scolor="brown";
@@ -134,7 +134,7 @@
           scolor="green";
         } else if(allcons[i].delivery_status == 'in-transit'){
           dstatus = capitalizeFirstLetter(allcons[i].delivery_status);
-          scolor="yellow";
+          scolor="#e6b800";
         } else if(allcons[i].delivery_status == 'reschedule'){
           dstatus = capitalizeFirstLetter(allcons[i].delivery_status);
           scolor="brown";

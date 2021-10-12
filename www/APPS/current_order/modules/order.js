@@ -120,9 +120,9 @@
         htm +=`<div class="items">
         <h3 style="color:${statColor}">${status}</h3>
         <p>Consignment No: ${alllist[i].consignment_id}</p>
-        <p>Date-Time: <span id = invdt${[pageNum]}${[i]}></p>
         <p>Receivable Amount: ${paytomerch}</p>
-        <p>Invoice No: <span id = inv${[pageNum]}${[i]}></span></span><a style ="float:right;color:blue;" onclick="getfindetail(${alllist[i].id})">Detail</a></p>
+        <p>Invoice No: <span id = inv${[pageNum]}${[i]}></span></p>
+        <p>Date-Time: <span id = invdt${[pageNum]}${[i]}></span><a style ="float:right;color:blue;" onclick="getfindetail(${alllist[i].id})">Detail</a></p>
     </div>`;
       }
       $("#fin-item").append(htm);

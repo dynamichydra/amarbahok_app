@@ -58,7 +58,8 @@
     
     <p><b>Less Paid: </b>${res.findata[0].less_paid_return}<span style="float:right;"><b>Collected Amount: </b>${res.findata[0].amount_paid}</span></p>
     
-    <p><b>Receivable Amount: </b>${res.findata[0].paytomerch - res.findata[0].less_paid_return}<span style="float:right;"><b>Invoice No.: </b><span id = "invno">${res.findata[0].comment}</span></p>
+    <p><b>Receivable Amount: </b>${res.findata[0].paytomerch - res.findata[0].less_paid_return}</p>
+    <p><b>Invoice No.: </b><span id = "invno">${res.findata[0].comment}</span></p>
     <p><b>Invoice Date/Time: </b><span id = "invdate">${res.findata[0].comment}</span></p>
       <br>
     <center>

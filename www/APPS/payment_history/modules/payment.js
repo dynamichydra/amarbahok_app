@@ -69,7 +69,7 @@
         }else if(alltkt[i].status == "declined"){
           color = "red";
         }else{
-          color = "yellow";
+          color = "#e6b800";
         }
         htm +=`<div class="items">
         <h3>${alltkt[i].ticket_no}</h3>
@@ -113,7 +113,7 @@
         }else if(alltkt[i].status == "declined"){
           color = "red";
         }else{
-          color = "yellow";
+          color = "#e6b800";
         }
         
         htm +=`<div class="items">
