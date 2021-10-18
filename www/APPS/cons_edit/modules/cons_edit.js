@@ -91,6 +91,13 @@
         <input type="hidden" name="total_price" id="total_price" value="${res.cdata[0].total_price}">
         <input type="hidden" name="total_cod_price" id="total_cod_price" value="${res.cdata[0].total_cod_charge}">
         <input type="hidden" name="merch_pay" id="merch_pay" value="${res.cdata[0].paytomerch}">
+        <input type="hidden" name="promo_code" id="promo_code" value="${res.cdata[0].promo_code}">
+        <input type="hidden" name="customeridd" id="customeridd" value="${res.cdata[0].customer}">
+
+        <input type="hidden" name="dcccharge" id="dcccharge" value="">
+        <input type="hidden" name="total_cod_charge" id="total_cod_charge" value="">
+        <input type="hidden" name="cash_collect" id="cash_collect" value="">
+        <input type="hidden" name="excharge" id="excharge" value="">
         </div>
 </div>
 
@@ -101,7 +108,7 @@
 </div>
 <div class="col s12">
     <div class="input-wrapper">
-        <h4 style="float: left;">Delivery Charge:-</h4><b style="float: right;" id="td_charge">${res.cdata[0].total_price}</b>
+        <h4 style="float: left;">Delivery Charge:-</h4><b style="float: right;" id="td_charge"> - ${res.cdata[0].total_price}</b>
     </div>
 </div>
 <div class="col s12">
@@ -229,8 +236,8 @@ function getAjaxpackageprice(total_weight){
            var totaldeduction = parseFloat(totaldchrg)+parseFloat(totalcodchrg);
            var totalpayamount = parcelprice - totaldeduction;
            var extraamounttocollect = parseFloat(parcelprice)-parseFloat(actualparcelprice);
-           // console.log('total dc'+totaldeduction+'total payable'+totalpayamount);
-           // console.log(totaldchrg+'/'+totalcodchrg);
+           console.log('total dc'+totaldeduction+'total payable'+totalpayamount);
+           console.log(totaldchrg+'/'+totalcodchrg);
            $("#extra_amount").val(extraamounttocollect);
            totaldc.val(totaldchrg);
            totalcod.val(totalcodchrg);
@@ -242,7 +249,7 @@ function getAjaxpackageprice(total_weight){
            $('#total_cod_price').val(totalcodchrg);
            document.getElementById('tpayable_amount').innerHTML = parseFloat(totalpayamount).toFixed(2);
            $('#merch_pay').val(totalpayamount);
-          //  getPromoPrice();
+            getPromoPrice();
            // getGrandTotal();
       //  }
 
@@ -265,7 +272,7 @@ function getAjaxServiceArea(service_ps){
            servicearea.empty();
            servicearea.val(sdata.data[0].area);
        
-       getAjaxpackageprice(total_weight);
+      //  getAjaxpackageprice(total_weight);
       })
 }
 
@@ -342,4 +349,90 @@ $(document).on('keyup', '#total_weight', function (e) {
               });
       }
     })
+  }
+
+
+  function getPromoPrice(){
+    var sarea = $("#service_area").val();
+    var promo_code = $("#promo_code").val();
+    var customer = $("#customeridd").val();
+    // var product_weight = parseFloat($('#total_weight').val());
+    // console.log(sarea);
+
+    var dcchrg = $("#dcccharge").val();
+    var extrchrg = $("#excharge").val();
+    var totalcodchrg = $("#total_cod_charge").val();
+    var parcelprice = $("#cash_collect").val();
+    // console.log('dcchrg'+dcchrg);
+    var form = new FormData();
+form.append("promo_code", promo_code);
+form.append("customer", customer);
+
+DM_CORE.apiForm('getDiscounredprice',form,function(res){
+  console.log(res.disp[0].metro_dc_dis);
+  var totaldc=$('#total_price');
+          totaldc.empty();
+        // if(res.success == "true"){
+          console.log('true');
+          
+          //  if(sarea == "urban"){
+          //    disc = res.disp[0].urban_dc_dis;
+          //    ex_disc = res.disp[0].urban_extra_chrg_dis;
+          //  }else if (sarea == "suburban") {
+          //    disc = res.disp[0].sub_urban_dc_dis;
+          //    ex_disc = res.disp[0].sub_urban_extra_chrg_dis;
+          //  }else {
+          //    disc = res.disp[0].metro_dc_dis;
+          //    ex_disc = res.disp[0].metro_extra_chrg_dis;
+          //  }
+
+          if(sarea == "urban"){
+            var finaldc = dcchrg - parseFloat(res.disp[0].urban_dc_dis);
+            if(extrchrg > 0){
+            var finalexchrg = extrchrg - parseFloat(res.disp[0].urban_extra_chrg_dis);
+            var finalexchrg = Math.trunc(finalexchrg);
+          // }
+            var totaldchrg = parseFloat(finaldc)+parseFloat(finalexchrg);
+          }else{
+              var totaldchrg = parseFloat(finaldc);
+            }
+          }else if (sarea == "suburban") {
+            var finaldc = dcchrg - parseFloat(res.disp[0].sub_urban_dc_dis);
+            if(extrchrg > 0){
+            var finalexchrg = extrchrg - parseFloat(res.disp[0].sub_urban_extra_chrg_dis);
+            var finalexchrg = Math.trunc(finalexchrg);
+          // }
+            var totaldchrg = parseFloat(finaldc)+parseFloat(finalexchrg);
+          }else{
+              var totaldchrg = parseFloat(finaldc);
+            }
+          }else {
+            var finaldc = dcchrg - parseFloat(res.disp[0].metro_dc_dis);
+            if(extrchrg > 0){
+            var finalexchrg = extrchrg - parseFloat(res.disp[0].metro_extra_chrg_dis);
+            var finalexchrg = Math.trunc(finalexchrg);
+            console.log('finaldc'+res.metro_dc_dis+'finalexchrg'+res.metro_extra_chrg_dis);
+          // }
+            var totaldchrg = parseFloat(finaldc)+parseFloat(finalexchrg);
+          }else{
+              var totaldchrg = parseFloat(finaldc);
+            }
+          }
+          var totaldeduction = parseFloat(totaldchrg)+parseFloat(totalcodchrg);
+          var totalpayamount = parseFloat(parcelprice) - parseFloat(totaldeduction);
+          totaldc.val(totaldchrg);
+          // totalcod.val(totalcodchrg);
+          // dcchargee.val(dccharge);
+          // exchargee.val(extrchrg);
+          document.getElementById('td_charge').innerHTML = '-'+parseFloat(totaldchrg);
+          // document.getElementById('tcod_charge').innerHTML = '-'+parseFloat(totalcodchrg);
+          if(isNaN(totalpayamount)){
+          document.getElementById('tpayable_amount').innerHTML = '-'+parseFloat(totaldeduction);
+        }else{
+          document.getElementById('tpayable_amount').innerHTML = parseFloat(totalpayamount).toFixed(2);
+        }
+      // }
+
+
+         })
   }
