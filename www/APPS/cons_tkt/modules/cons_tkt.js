@@ -2,9 +2,13 @@
 
 (function() {
   
-  init();
+  if(localStorage.getItem("userConfig") != null){
+    init();
+    }else{
+      window.location.href = "#/login";
+    }
 
-  function init() {
+  function init(){
     $('.btm-mnu').show();
     $('.sidebar').show();
     $('.content-right').show();
@@ -30,9 +34,16 @@
         <input type="hidden" id="consid" name="consid" value="${editId}">
         </div>
 </div>
-<div class="col s12">
+<div class="col s12" style="margin-bottom: 20px;">
     <div class="input-wrapper">
-        <input type="text" id="subject" value="" placeholder="Subject"/>
+    <select name="subject" id="subject" required>
+                <option value="">Select Subject</option>
+                 <option value="Shipping Details">Shipping Details</option>
+                 <option  value="Delivery">Delivery</option>
+                 <option  value="Payment">Payment</option>
+                 <option  value="Return Parcel">Return Parcel</option>
+                 <option  value="Order Cancellation">Order Cancellation</option>
+ </select>
     </div>
 </div>
  <div class="col s12">
@@ -59,6 +70,14 @@
     var subject = $('#subject').val();
     var description = $('#description').val();
     var consid = $('#consid').val();
+
+    if(subject == ''){
+      alert('Please fill all the details');
+      return false;
+    } else if (description == ''){
+      alert('Please fill all the details');
+      return false;
+    }
 
     var form = new FormData();
     form.append("consignment_id", consignment_id);

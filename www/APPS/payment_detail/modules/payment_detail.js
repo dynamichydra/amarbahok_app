@@ -2,7 +2,11 @@
 
 (function() {
   
-  init();
+  if(localStorage.getItem("userConfig") != null){
+    init();
+    }else{
+      window.location.href = "#/login";
+    }
 
   function init() {
     $('.btm-mnu').show();
@@ -53,6 +57,7 @@
       htm +=`<div class="items">
       <h3>${paymnet[i].consignment_id}</h3>
       <p>Order Date : ${d}</p>
+      <p>Customer Name : ${paymnet[i].recipient_name}</p>
       <p>Cash Collection : ${paymnet[i].cash_collection}</p>
       <p>Delivery Charge : ${paymnet[i].total_price}</p>
       <p>COD Charge : ${paymnet[i].total_cod_charge}</p>

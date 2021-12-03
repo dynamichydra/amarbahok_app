@@ -2,7 +2,11 @@
 
 (function() {
   
-  init();
+  if(localStorage.getItem("userConfig") != null){
+    init();
+    }else{
+      window.location.href = "#/login";
+    }
 
   function init() {
     $('.btm-mnu').show();
@@ -65,6 +69,7 @@
     })
     }
 
+
     function capitalizeFirstLetter(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     }
@@ -77,8 +82,18 @@ function editFunction(ccbid){
 }
 
 function ticketFunction(ccbid){
-  localStorage.setItem('considtkt', ccbid);
-  window.location.href = "#/cons_tkt";
+  var form = new FormData();
+      form.append("ciid", ccbid);
+  
+      DM_CORE.apiForm('tiktcount',form,function(res){
+        console.log(res);
+        if(res.totaltkt[0].totalopen == 0){
+          localStorage.setItem('considtkt', ccbid);
+          window.location.href = "#/cons_tkt";
+        }else{
+          alert("A Ticket is already issued. Next ticket can be issued after resolving the ticket.");
+        }
+      })
 }
 
 function trackFunction(ccbid){

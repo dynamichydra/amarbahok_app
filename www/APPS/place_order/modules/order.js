@@ -5,7 +5,11 @@ var disc = "0";
 
 (function() {
   
-  init();
+  if(localStorage.getItem("userConfig") != null){
+    init();
+    }else{
+      window.location.href = "#/login";
+    }
   
     
   function init() {
@@ -226,8 +230,9 @@ var disc = "0";
       $(document).on('change', '#cash_collect', function (e) {
         var cashtocollect = parseFloat($("#cash_collect").val());
         var parcelprice = $("#parcel_price").val();
-        if(Math.sign(cashtocollect) == -1 ){
-          alert("Cash collection should be greater than Parcel price");
+        var product_weight = $("#parcel_wt").val();
+        if(Math.sign(cashtocollect) == -1  || product_weight == ""){
+          alert("Cash collection cannot be negative / please input parcel weight first");
           $("#cash_collect").val("");
         }else{
         var tweight = $("#parcel_wt").val();
@@ -248,8 +253,9 @@ var disc = "0";
       $(document).on('keyup', '#cash_collect', function (e) {
         var cashtocollect = parseFloat($("#cash_collect").val());
         var parcelprice = $("#parcel_price").val();
-        if(Math.sign(cashtocollect) == -1 ){
-          alert("Cash collection should be greater than Parcel price");
+        var product_weight = $("#parcel_wt").val();
+        if(Math.sign(cashtocollect) == -1  || product_weight == ""){
+          alert("Cash collection cannot be negative / please input parcel weight first");
           $("#cash_collect").val("");
         }else{
         var tweight = $("#parcel_wt").val();
@@ -318,6 +324,10 @@ var disc = "0";
 })();
 
 function submitOrder(){
+
+  document.getElementById("placeOrder").disabled = true;
+  document.getElementById("placeOrder").innerHTML = "processing....";
+
   var consignment_id = $('#consignment_id').val();
   var recipient_name = $('#recipient_name').val();
   var recipient_number = $('#recipient_number').val();
@@ -395,6 +405,8 @@ function submitOrder(){
               icon: "error",
               button: "Try again",
             });
+            document.getElementById("placeOrder").disabled = false;
+  document.getElementById("placeOrder").innerHTML = "PLACE ORDER";
     }
   })
 }

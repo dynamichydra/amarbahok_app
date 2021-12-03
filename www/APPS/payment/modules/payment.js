@@ -31,10 +31,6 @@
       }
       $("#office").html(htm);
       $('#office').val(userConfig.office);
-
-      if(userConfig.office != ""){
-        document.getElementById("office").disabled = true;
-      }
     })
   }
 
@@ -79,22 +75,16 @@
 
   function getUserdetail(){
     if(localStorage.getItem("userConfig") != null){
-      console.log(userConfig.id);
-    $('#m_nid').val(userConfig.m_nid);
-    $('#name').val(userConfig.name);
-    $('#phno').val(userConfig.phone);
-    $('#email').val(userConfig.email);
-    $('#address').val(userConfig.address);
-    $('#merchant_landmark').val(userConfig.merchant_landmark);
-    $('#distt').val(userConfig.district);
-    $('#police_station').val(userConfig.police_station);
+      console.log(userConfig);
 
-    $('#company').val(userConfig.company);
-    $('#web').val(userConfig.website);
-
-    $('#package').val(userConfig.package);
-    $('#office').val(userConfig.office);
-    
+    $('#baccName').val(userConfig.bank_account_name);
+    $('#bAccno').val(userConfig.bank_account);
+    $('#bName').val(userConfig.bank_name);
+    $('#bBranch').val(userConfig.bank_branch);
+    $('#brouting').val(userConfig.bank_routing);
+    $('#mobile_banking_type').val(userConfig.mobile_banking_type);
+    $('#default_pymnt').val(userConfig.default_pymnt);
+    $('#mobile_banking_no').val(userConfig.mobile_banking_no);
     }
   }
 
@@ -103,39 +93,29 @@
       console.log(userConfig.id);
     
     var userid = userConfig.id;
-    var m_nid = $('#m_nid').val();
-    var name = $('#name').val();
-    var phno = $('#phno').val();
-    var email = $('#email').val();
-    var address = $('#address').val();
-    var merchant_landmark = $('#merchant_landmark').val();
-    var distt = $('#distt').val();
-    var police_station = $('#police_station').val();
-    var company = $('#company').val();
-    var web = $('#web').val();
-    var office = $('#office').val();
+
+    var baccName = $('#baccName').val();
+    var bAccno = $('#bAccno').val();
+    var bName = $('#bName').val();
+    var bBranch = $('#bBranch').val();
+    var brouting = $('#brouting').val();
+    var mobile_banking_type = $('#mobile_banking_type').val();
+    var default_pymnt = $('#default_pymnt').val();
+    var mobile_banking_no = $('#mobile_banking_no').val();
 
     var form = new FormData();
     form.append("userid", userid);
-    form.append("m_nid", m_nid);
-    form.append("name", name);
-    form.append("phno", phno);
-    form.append("email", email);
-    form.append("address", address);
-    form.append("merchant_landmark", merchant_landmark);
-    form.append("district", distt);
-    form.append("police_station", police_station);
-    form.append("company", company);
-    form.append("web", web);
-    form.append("package", '15');
-    form.append("office", office);
+    form.append("baccName", baccName);
+    form.append("bAccno", bAccno);
+    form.append("bName", bName);
+    form.append("bBranch", bBranch);
+    form.append("brouting", brouting);
+    form.append("mobile_banking_type", mobile_banking_type);
+    form.append("default_pymnt", default_pymnt);
+    form.append("mobile_banking_no", mobile_banking_no);
     
-    if(office == null){
-      alert('Please choose the office');
-      return false;
-    }
 
-    DM_CORE.apiForm('updateprofile',form,function(res){
+    DM_CORE.apiForm('updateprofilepayment',form,function(res){
       console.log(res);
       
       if (res.success == true) {

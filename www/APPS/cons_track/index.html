@@ -1,47 +1,53 @@
-<style type="text/css">
-    .manuTab{
-        text-align: left;
-        padding: 20px 0px 10px;
-    }
-    .manuTab h3{
-        color: #99211d;
-    }
-    .hist-date{
-        font-size: 20px;
-        padding: 10px 0px;
-        text-decoration: underline;
-    }
-    .items{
-        background-color: #ececec;
-        padding: 10px;
-        border-radius: 10px;
-        margin-bottom: 10px;
-    }
-    select {
-    /* background-color: rgba(255, 255, 255, 0.9); */
-    width: 101% !important;
-    /* padding: 5px 0px 5px 20px !important; */
-    border: #99211d 1px solid !important;
-    /* border-radius: 2px; */
-    height: 3.8rem;
-    /* margin-left: 10px !important; */
-    border-radius: 5px;
-}
-</style>
-<div class="container"> 
-    <div class="row">
-        <div class="col s12">
-            <div class="manuTab active">
-                <!-- <h3>Tracking Detail</h3> -->
-            </div>
+<link href="APPS/cons_track/modules/tracking.css"" rel="stylesheet" type="text/css">
+<section class="root">
+  
+    <figure>
+      <img src="https://amarbahok.com//asset/new/images/BenBois-French-parcel-post.svg" alt="">
+      <figcaption>
+        <h4>Tracking Details</h4>
+        <h6>Order Number</h6>
+        <h2 id="orderidd"># A61452B</h2>
+      </figcaption>
+    </figure>
+  </section>
+  <section>
+    <br>
+    <center><h3 style="color: #dc0f48;font-weight:bold;" id="delstatus"></h3></center>
+    <br>
+    <div class="row orderstatus-container" style="margin-left: 80px;">
+      <div class="medium-12 columns" id="conttrkdetail">
+        <!-- <div class="orderstatus">
+          <div class="orderstatus-check"><span class="orderstatus-number">4</span></div>
+          <div class="orderstatus-text">
+            <time>17 Aug</time>
+            <p>Your order is delivered</p>
+          </div>
         </div>
-             <div id="conttrkdetail">
-            </div>
-               <table  class="constrk" id="constrk">
-                
-               </table> 
-             
+        <div class="orderstatus done">
+          <div class="orderstatus-check"><span class="orderstatus-number">3</span></div>
+          <div class="orderstatus-text">
+            <time>17 Dec</time>
+            <p>Order created</p>
+          </div>
+        </div>
+        <div class="orderstatus done">
+          <div class="orderstatus-check"><span class="orderstatus-number">2</span></div>
+          <div class="orderstatus-text">
+            <time>17 Dec</time>
+            <p>Your order is placed</p>
+          </div>
+        </div>
+        <div class="orderstatus done">
+          <div class="orderstatus-check"><span class="orderstatus-number">1</span></div>
+          <div class="orderstatus-text">
+            <time>17 Dec</time>
+            <p>Your order is placed</p>
+          </div>
+        </div> -->
+  
+  
+      </div>
     </div>
-</div>
-<script src="APPS/cons_track/modules/cons_track.js"></script>
+  </section>
+  <script src="APPS/cons_track/modules/tracking.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>

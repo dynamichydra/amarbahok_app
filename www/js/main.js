@@ -51,6 +51,9 @@ $(function() {
         dots: false
     });
     document.getElementById("cname").innerHTML = userConfig.company;
+    if(userConfig.logo != ""){
+    document.getElementById("myImg").src = "https://amarbahok.com/uploads/merchants/"+userConfig.logo;
+    }
 
      // Girls
     $(".girl-slide").owlCarousel({
@@ -116,6 +119,14 @@ $(function() {
 $('#logout').on('click',doLogout);
 $('#place_order').on('click',checkProfile);
 
+// window.onbeforeunload = function(){
+//     // console.log(userConfig);
+//     if(localStorage.getItem("userConfig") == null){
+//         // alert("back");
+//         // window.location.href = "#/place_order"; 
+//         document.location = "#/place_order"; 
+//     }
+// }
 
 
 //cart

@@ -2,7 +2,11 @@
 
 (function() {
   
-  init();
+  if(localStorage.getItem("userConfig") == null){
+    init();
+    }else{
+      window.location.href = "#/main";
+    }
 
   function init() {
     $('.btm-mnu').hide();

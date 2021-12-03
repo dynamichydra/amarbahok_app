@@ -51,7 +51,7 @@ h6 {
 }
 
 p {
-    margin: 8px 0;
+    margin: 1px 0;
 }
 
 a {
@@ -2366,7 +2366,7 @@ hr {
 .user {
     /*background: linear-gradient(to right, #f4181c, #d31115)!important;*/
     background-image: url(../images/acc.jpg)!important;
-    padding: 10px 11px 4px!important;
+    padding: 10px 11px 0px!important;
     background-size: cover!important;
 }
 .hr-line {

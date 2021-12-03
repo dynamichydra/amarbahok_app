@@ -2,7 +2,11 @@
 
 (function() {
   
-  init();
+  if(localStorage.getItem("userConfig") != null){
+    init();
+    }else{
+      window.location.href = "#/login";
+    }
   var pageNum = 1;
 
   function init() {
@@ -70,6 +74,7 @@
         htm +=`<div class="items">
         <h3 style="color:${statColor}">${status}</h3>
         <p>Consignment No: ${alllist[i].consignment_id}</p>
+        <p>Customer Name: ${alllist[i].name}</p>
         <p>Receivable Amount: ${paytomerch}</p>
         <p>Invoice No: <span id = inv${[i]}></span></p>
         <p>Date-Time: <span id = invdt${[i]}></span><a style ="float:right;color:blue;" onclick="getfindetail(${alllist[i].id})">Detail</a></p>

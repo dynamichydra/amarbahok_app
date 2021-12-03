@@ -20,20 +20,20 @@
   <div class="navbar">
     <div class="container">
         <div class="row">
-            <div class="col s3">
+            <div class="col s3" style="margin-top: 15px;">
                 <a href="#slide-out" data-activates="slide-out" class="sidebar"><i class="fa fa-align-left"></i></a>
             </div>
             <div class="col s6" style="text-align: center;">
                 <a href="#/main"><img src="img/logo.png" class="logo-img"></a>
             </div>
             <div class="col s3">
-                <!-- <div class="content-right">
-                    <a href="#slide-out-cart" data-activates="slide-out-cart" class="sidebar-search"><i class="fa fa-search"></i></a>
-                    <a href="#slide-out-right" data-activates="slide-out-right" class="sidebar-cart">
+                <div class="content-right">
+                    <!-- <a href="#slide-out-cart" data-activates="slide-out-cart" class="sidebar-search"><i class="fa fa-search"></i></a> -->
+                    <!-- <a href="#slide-out-right" data-activates="slide-out-right" class="sidebar-cart">
                         <i class="fa fa-bell"></i>
                         <sup>3</sup>
-                    </a>
-                </div> -->
+                    </a> -->
+                </div>
             </div>
         </div>
     </div>
@@ -41,12 +41,13 @@
 <!-- end navbar -->
 
 <!-- sidebar -->
-<div class="sidebar-panel">
+<div class="sidebar-panel" style="margin-bottom: 0px;">
     <ul id="slide-out" class="side-nav">
         <li class="active">
             <div class="collapsible-header user active">
-                <i class="fa fa-user profile-icon"></i>
-                <p class="name-txt"><b id="cname">Menu</b></p>
+                <!-- <i class="fa fa-user profile-icon"></i> -->
+                <img id="myImg" src="img/logo.png" class="logo-img" style="width: 90px;height: 40px;">
+                <p style="float: right;margin-top: 15px;" class="name-txt"><b id="cname">Menu</b></p>
                 <!-- <p class="name-txt"><b id="cname">Menu</b><span><i class="fa fa-angle-right right"></i></span></p> -->
             <!-- </div>
             <div class="collapsible-body" style="display:none;">
@@ -57,6 +58,7 @@
             </div> -->
         </li>
         <li><a href="#/profile"><i class="fa fa-user"></i>Profile</a></li>
+        <li><a href="#/payment"><i class="fa fa-cc-visa"></i>Payment</a></li>
         <li><a id="logout"><i class="fa fa-share"></i>Log Out</a></li>
     </ul>
 </div>
