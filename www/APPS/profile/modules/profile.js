@@ -115,6 +115,11 @@
     var web = $('#web').val();
     var office = $('#office').val();
 
+    if(office == ''){
+      alert('Please choose the office first');
+      return false;
+    }
+
     var form = new FormData();
     form.append("userid", userid);
     form.append("m_nid", m_nid);

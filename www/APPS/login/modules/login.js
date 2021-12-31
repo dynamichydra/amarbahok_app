@@ -23,7 +23,7 @@
     if(email == ''){
       alert('Please provide the email');
       document.getElementById("login").disabled = false;
-      document.getElementById("login").innerHTML = "LOGIN";
+      document.getElementById("login").innerHTML = "LOG IN";
       return false;
     }
     var form = new FormData();
@@ -68,7 +68,7 @@
             
       } else {
         document.getElementById("login").disabled = false;
-    document.getElementById("login").innerHTML = "LOGIN";
+    document.getElementById("login").innerHTML = "LOG IN";
           swal({
                 title: "Failure!",
                 text: "Email or Password didn't match!",

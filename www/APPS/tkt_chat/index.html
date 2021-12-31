@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+    body {
+      font-family: Arial;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    form.example input[type=text] {
+      padding: 10px;
+      font-size: 17px;
+      border: 1px solid grey;
+      float: left;
+      width: 80%;
+      background: #f1f1f1;
+    }
+    
+    form.example button {
+      float: left;
+      width: 20%;
+      /* padding: 0px; */
+      background: #2196F3;
+      color: white;
+      font-size: 13px;
+      border: 1px solid grey;
+      border-left: none;
+      cursor: pointer;
+    }
+    
+    form.example button:hover {
+      background: #0b7dda;
+    }
+    
+    form.example::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    </style>
+<div class="container"> 
+    <div class="row">
+        <div class="col s12">
+            <div class="manuTab active">
+                <h3>Ticket No :-<span id="tktno"></span></h3>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div id="tktchatdetail" class="panel-body" style="height: 400px; overflow-y: scroll; background-color:  #e6e6e6;">
+            </div><br>
+            <form class="example">
+                <input type="text" id="mesg" style="size:24px;" placeholder="Message...." name="search">
+                <input type="hidden" id="ticketid" class="form-control" value="">
+                <input type="hidden" id="ticketno" class="form-control" value="">
+                <button id="sendmsg"><i class="fa fa-send-o"></i></button>
+              </form>
+    </div>
+    </div>
+</div>
+<script src="APPS/tkt_chat/modules/tkt_chat.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>

@@ -15,6 +15,7 @@
     $('.content-right').show();
     // setEvents();
     getConsList();
+    $('#searchcus').on('click',getConsList);
     $('#showmore').on('click',setEvents);
   }
 
@@ -62,9 +63,14 @@
   function getConsList(){
     if(localStorage.getItem("userConfig") != null){
       console.log(userConfig.id);
+      var cussname = $('#cussname').val();
       var userid = userConfig.id;
+
       pageNum = 1;
     var form = new FormData();
+    if(cussname != ''){
+    form.append("recipientname", cussname);
+    }
     form.append("userid", userid);
     form.append("offset", (pageNum-1)*10);
     // form.append("limit", pageNum);

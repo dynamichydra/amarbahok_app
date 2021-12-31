@@ -358,6 +358,49 @@ function submitOrder(){
   var notes = $('#notes').val();
   var id = $('#id').val();
 
+  if(recipient_name == ''){
+    alert('Please provide the recipient name.');
+    document.getElementById("placeOrder").disabled = false;
+    document.getElementById("placeOrder").innerHTML = "PLACE ORDER";
+    return false;
+  }
+
+  if(recipient_number == ''){
+    alert('Please provide the recipient number.');
+    document.getElementById("placeOrder").disabled = false;
+    document.getElementById("placeOrder").innerHTML = "PLACE ORDER";
+    return false;
+  }
+
+  if(recipient_address_shipping == ''){
+    alert('Please provide the recipient address.');
+    document.getElementById("placeOrder").disabled = false;
+    document.getElementById("placeOrder").innerHTML = "PLACE ORDER";
+    return false;
+  }
+
+
+  if(parcel_wt == ''){
+    alert('Please provide the parcel weight.');
+    document.getElementById("placeOrder").disabled = false;
+    document.getElementById("placeOrder").innerHTML = "PLACE ORDER";
+    return false;
+  }
+
+  if(parcel_price == ''){
+    alert('Please provide the parcel price.');
+    document.getElementById("placeOrder").disabled = false;
+    document.getElementById("placeOrder").innerHTML = "PLACE ORDER";
+    return false;
+  }
+
+  if(cash_collect == ''){
+    alert('Please provide the cash collection amount.');
+    document.getElementById("placeOrder").disabled = false;
+    document.getElementById("placeOrder").innerHTML = "PLACE ORDER";
+    return false;
+  }
+
   var form = new FormData();
   form.append("consignment_id", consignment_id);
   form.append("select_branch", select_branch);

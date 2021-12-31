@@ -36,8 +36,8 @@
       <div class="orderstatus-check"><span class="orderstatus-number">${n}</span></div>
       <div class="orderstatus-text">
         <time>${allcons[i].date}</time>
-        <p>${allcons[i].consignment_status}</p>
-        <p>${allcons[i].detail}</p>
+        <p>${capitalizeFirstLetter(allcons[i].consignment_status.toLowerCase())}</p>
+        <p>${capitalizeFirstLetter(allcons[i].detail)}</p>
       </div>
     </div>`;
     n--

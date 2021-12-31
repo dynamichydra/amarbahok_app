@@ -76,12 +76,12 @@
           color = "#e6b800";
         }
         htm +=`<div class="items">
-        <h3>${alltkt[i].ticket_no}</h3>
+        <h3>${alltkt[i].ticket_no}<a style ="border-radius:20px;" onclick="gettktdetail(${alltkt[i].id})"> (3)</a></h3>
         <p>Consignment No: ${alltkt[i].consignment}</p>
+        <p>Customer Name: ${alltkt[i].customer_name}</p>
         <p>Subject: ${alltkt[i].subject}</p>
         <p>Status : <b style="color:${color}">${alltkt[i].status}</b></p>
-        <p>Date : ${d}</p>
-        <p>Message :${alltkt[i].comment}<a style ="float:right;color:blue;" onclick="gettktdetail(${alltkt[i].id})">Detail</a></p>
+        <p>Date : ${d}<a style ="float:right;color:blue;" onclick="gettktdetail(${alltkt[i].id})">Detail</a></p>
     </div>`;
       }
       $("#tkt-item").html(htm);
