@@ -150,11 +150,11 @@
                 icon: "success",
                 // button: "Aww yiss!",
               });
+              localStorage.setItem('userConfig', btoa(JSON.stringify(res.userdetails)));
           window.setTimeout(function() {
-            window.location.href = "#/main";
+            window.location.href = "#/place_order";
               }, 1000);
-            localStorage.setItem('userConfig', btoa(JSON.stringify(res.userdetails)));
-            location.reload();
+            // location.reload();
       } else {
           swal({
                 title: "Failure!",

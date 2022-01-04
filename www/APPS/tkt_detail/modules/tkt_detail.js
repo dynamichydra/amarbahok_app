@@ -32,6 +32,7 @@
 
         const date = new Date(res.tktdetail[0].date_open);
         var dopen = prettyDate(date);
+        if(res.tktdetail[0].status == "on review"){
         if(res.tktdetail[0].date_close != ""){
     htm +=`<div class="col s12">
     <p><b>Ticket NO:</b> ${res.tktdetail[0].ticket_no}</p>
@@ -58,6 +59,30 @@
       </center>
     </div>`;
         }
+      }else{
+        if(res.tktdetail[0].date_close != ""){
+          htm +=`<div class="col s12">
+          <p><b>Ticket NO:</b> ${res.tktdetail[0].ticket_no}</p>
+          <p><b>Consignment ID: </b>${res.consid[0].consignment_id}</p>
+          <p><b>Customer Name: </b>${res.cusname[0].recipient_name}</p>
+          <p><b>Subject: </b>${res.tktdetail[0].subject}</p>
+          <p><b>Date Open: </b>${dopen}<span style="float:right;"><b>Status: </b>${res.tktdetail[0].status}</span></p>
+          <p><b>Closure Date: </b>${d}</p>
+          <p><b>Message: </b>${res.tktdetail[0].comment}</p><br><br>
+
+          </div>`;
+              }else{
+                htm +=`<div class="col s12">
+          <p><b>Ticket NO:</b> ${res.tktdetail[0].ticket_no}</p>
+          <p><b>Consignment ID: </b>${res.consid[0].consignment_id}</p>
+          <p><b>Subject: </b>${res.tktdetail[0].subject}</p>
+          <p><b>Date Open: </b>${dopen}<span style="float:right;"><b>Status: </b>${res.tktdetail[0].status}</span></p>
+          <p><b>Closure Date: </b>N/A</p>
+          <p><b>Message: </b>${res.tktdetail[0].comment}</p><br><br>
+
+          </div>`;
+              }
+      }
 
       $("#constkt").html(htm);
     })

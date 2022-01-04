@@ -19,6 +19,11 @@
     $('#showmore').on('click',setEvents);
   }
 
+  $('#example').submit(function (evt) {
+    evt.preventDefault();
+    window.history.back();
+});
+
   function setEvents(){
     // var lastScrollTop = 0;    
 
@@ -61,6 +66,7 @@
   // }
 
   function getConsList(){
+    event.preventDefault()
     if(localStorage.getItem("userConfig") != null){
       console.log(userConfig.id);
       var cussname = $('#cussname').val();

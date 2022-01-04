@@ -76,7 +76,11 @@
           color = "#e6b800";
         }
         htm +=`<div class="items">
+<<<<<<< Updated upstream
         <h3>${alltkt[i].ticket_no}<a style ="border-radius:20px;" onclick="gettktdetail(${alltkt[i].id})"> (3)</a></h3>
+=======
+        <h3>${alltkt[i].ticket_no} <a style ="border-radius:20px;" onclick="gettktdetail(${alltkt[i].id})"></a></h3>
+>>>>>>> Stashed changes
         <p>Consignment No: ${alltkt[i].consignment}</p>
         <p>Customer Name: ${alltkt[i].customer_name}</p>
         <p>Subject: ${alltkt[i].subject}</p>

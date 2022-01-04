@@ -1,10 +1,18 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
+<<<<<<< Updated upstream
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+=======
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- <link href="APPS/tkt_chat/modules/tracking.css" rel="stylesheet" type="text/css"> -->
+>>>>>>> Stashed changes
 <style>
     body {
       font-family: Arial;
@@ -44,6 +52,7 @@
       clear: both;
       display: table;
     }
+<<<<<<< Updated upstream
     </style>
 <div class="container"> 
     <div class="row">
@@ -52,6 +61,67 @@
                 <h3>Ticket No :-<span id="tktno"></span></h3>
             </div>
         </div>
+=======
+
+    figure {
+  display: flex;
+  max-width: 100%;
+  height: auto;
+}
+figure img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 15%;
+  border: 1.5px solid #f05a00;
+  margin-right: 1.5rem;
+  padding:1rem;
+}
+figure figcaption {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+figure figcaption h4 {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+figure figcaption h6 {
+  font-size: 1rem;
+  font-weight: 300;
+}
+figure figcaption h2 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.root {
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+}
+
+h2, h4, h6 {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+#main {
+    margin-top: 0px;
+}
+    </style>
+    <section class="root" style="margin-top: 0px;"> 
+      <figure>
+        <img src="img/live-chat.webp" alt="">
+        <figcaption>
+          <h4>Live Chat</h4>
+          <h6>Ticket Number</h6>
+          <h2 id="tktno"># A61452B</h2>
+        </figcaption>
+      </figure>
+    </section>
+    <br>
+    <section>
+>>>>>>> Stashed changes
 
         <div class="col s12">
             <div id="tktchatdetail" class="panel-body" style="height: 400px; overflow-y: scroll; background-color:  #e6e6e6;">
@@ -63,7 +133,11 @@
                 <button id="sendmsg"><i class="fa fa-send-o"></i></button>
               </form>
     </div>
+<<<<<<< Updated upstream
     </div>
 </div>
+=======
+  </section>
+>>>>>>> Stashed changes
 <script src="APPS/tkt_chat/modules/tkt_chat.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>

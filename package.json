@@ -13,7 +13,12 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "devDependencies": {
+<<<<<<< Updated upstream
     "cordova-android": "^10.1.1"
+=======
+    "cordova-android": "^10.1.1",
+    "cordova-plugin-whitelist": "^1.3.4"
+>>>>>>> Stashed changes
   },
   "cordova": {
     "plugins": {},

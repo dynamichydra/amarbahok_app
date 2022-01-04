@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "892415871357",
+    "project_id": "amarbahok-e8204",
+    "storage_bucket": "amarbahok-e8204.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892415871357:android:d89381ac118cab50c96414",
+        "android_client_info": {
+          "package_name": "com.dokume.amarbahok"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "892415871357-aejnmpcnkvdltf9nimmm9ci4clc3l4o7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxfW05Hn5GGX3v0B81jpatNxNe4okZPtE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "892415871357-aejnmpcnkvdltf9nimmm9ci4clc3l4o7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
