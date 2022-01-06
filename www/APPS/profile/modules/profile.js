@@ -114,9 +114,14 @@
     var company = $('#company').val();
     var web = $('#web').val();
     var office = $('#office').val();
+    var pkg = $('#package').val();
 
     if(office == ''){
       alert('Please choose the office first');
+      return false;
+    }
+    if(pkg == null){
+      alert('Please choose package first');
       return false;
     }
 

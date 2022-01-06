@@ -32,9 +32,9 @@
 
     DM_CORE.apiForm('login',form,function(res){
       console.log(res)
-      localStorage.setItem('userConfig', btoa(JSON.stringify(res.userdetails)));
-      window.setTimeout(function() {
+      // window.setTimeout(function() {
       if (res.success == true) {
+        localStorage.setItem('userConfig', btoa(JSON.stringify(res.userdetails)));
         if (res.pass_updated == 1) {
           window.location.href = "#/main";
             swal('Successfully signed in!', {
@@ -75,8 +75,9 @@
                 icon: "error",
                 button: "Try again",
               });
+              window.location.href = "#/login";
       }
-    }, 1000);
+    // }, 1000);
       
     })
 

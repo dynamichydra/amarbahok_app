@@ -9,8 +9,15 @@
     }
 
   function init() {
+    if(localStorage.getItem("userConfig") != null){
+      if(userConfig.pass_updated == 1){
     $('.btm-mnu').show();
     $('.sidebar').show();
+      }else{
+        $('.btm-mnu').hide();
+        $('.sidebar').hide(); 
+      }
+    }
     $('.content-right').show();
     // $('.modal').modal();
     $('#updatepass').on('click',doUpdate);
