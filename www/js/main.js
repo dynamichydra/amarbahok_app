@@ -19,7 +19,7 @@ $(function() {
         edge: 'right'
     });
 
-
+    gettktnotif();
     // navbar on scroll
     /*$(window).on('scroll', function() {
 
@@ -130,6 +130,22 @@ $('#place_order').on('click',checkProfile);
 
 
 //cart
+
+function gettktnotif(){
+    var useriddd = userConfig.id;
+  var form = new FormData();
+  form.append("userid", useriddd);
+
+  DM_CORE.apiForm('ticketnotifno',form,function(res){
+    console.log(res);
+    if(res.tktcnt > 0){totalnotifno
+    $('#totalnotifno').html('1');
+    $('#slide-out-right').append('<li><i class="fa fa-bell-o"></i>You have '+res.tktcnt+' new messages in ticket</li>');
+    }
+  })
+}
+
+
 jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
     jQuery('.quantity').each(function() {
       var spinner = jQuery(this),

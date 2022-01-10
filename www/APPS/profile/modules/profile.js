@@ -157,9 +157,9 @@
               });
               localStorage.setItem('userConfig', btoa(JSON.stringify(res.userdetails)));
           window.setTimeout(function() {
-            window.location.href = "#/place_order";
+            window.location.href = "#/profile";
               }, 1000);
-            // location.reload();
+            location.reload();
       } else {
           swal({
                 title: "Failure!",

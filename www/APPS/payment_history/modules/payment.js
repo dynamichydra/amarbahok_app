@@ -57,6 +57,7 @@
 
     DM_CORE.apiForm('ticketlist',form,function(res){
       ++pageNum;
+      var tktNum = "";
       console.log(res);
       var alltkt = res.tktdetail;
       var color = "";
@@ -75,8 +76,11 @@
         }else{
           color = "#e6b800";
         }
+
+        tktNum = gettktnum(alltkt[i].id, [i]);
+
         htm +=`<div class="items">
-        <h3>${alltkt[i].ticket_no} <a style ="border-radius:20px;" onclick="gettktdetail(${alltkt[i].id})"></a></h3>
+        <h3>${alltkt[i].ticket_no} <a style ="border-radius:20px;" onclick="gettktdetail(${alltkt[i].id})" id="tcount${[i]}"></a></h3>
         <p>Consignment No: ${alltkt[i].consignment}</p>
         <p>Customer Name: ${alltkt[i].customer_name}</p>
         <p>Subject: ${alltkt[i].subject}</p>
@@ -101,6 +105,7 @@
 
     DM_CORE.apiForm('ticketlist',form,function(res){
       ++pageNum;
+      var tktNum = "";
       console.log(res);
       var alltkt = res.tktdetail;
       var color = "";
@@ -119,9 +124,10 @@
         }else{
           color = "#e6b800";
         }
-        
+        tktNum = gettktnum(alltkt[i].id , pageNum+[i]);
+
         htm +=`<div class="items">
-        <h3>${alltkt[i].ticket_no}</h3>
+        <h3>${alltkt[i].ticket_no}<a style ="border-radius:20px;" onclick="gettktdetail(${alltkt[i].id})" id="tcount${[i]}"></a></h3>
         <p>Consignment No: ${alltkt[i].consignment}</p>
         <p>Subject: ${alltkt[i].subject}</p>
         <p>Status : <b style="color:${color}">${alltkt[i].status}</b></p>
@@ -133,6 +139,21 @@
     })
     }
   }
+
+
+  function gettktnum(tktID , num){
+    console.log(tktID);
+    var tciketid = tktID;
+  var form = new FormData();
+  form.append("tciketid", tciketid);
+
+  DM_CORE.apiForm('ticketnumber',form,function(res){
+    console.log(res);
+    if(res.tktcount > 0){
+    $('#tcount'+num).html(' ('+res.tktcount+')');
+    }
+  })
+}
 
 })();
 
