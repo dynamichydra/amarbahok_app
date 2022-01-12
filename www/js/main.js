@@ -130,6 +130,15 @@ $('#place_order').on('click',checkProfile);
 
 
 //cart
+// window.setInterval(function(){
+//   /// call your function here
+//   gettktnotif();
+// }, 5000);
+
+
+var intervalId = setInterval(function(){
+  gettktnotif();
+}, 5000);
 
 function gettktnotif(){
     var useriddd = userConfig.id;
@@ -138,9 +147,14 @@ function gettktnotif(){
 
   DM_CORE.apiForm('ticketnotifno',form,function(res){
     console.log(res);
-    if(res.tktcnt > 0){totalnotifno
+    if(res.tktcnt > 0){
     $('#totalnotifno').html('1');
-    $('#slide-out-right').append('<li><i class="fa fa-bell-o"></i>You have '+res.tktcnt+' new messages in ticket</li>');
+    $('#totalnotifnobottom').html(res.tktcnt);
+    $('#slide-out-right').html('<li><i class="fa fa-bell-o"></i>You have '+res.tktcnt+' new messages in ticket</li>');
+    }else{
+      $('#totalnotifno').html('0');
+      $('#totalnotifnobottom').html('');
+    $('#slide-out-right').html('<li><center>No messages here</cenetr></li>');
     }
   })
 }
@@ -180,6 +194,7 @@ jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</di
     });
 
     function doLogout(){
+      clearInterval(intervalId);
         localStorage.clear();
         window.location.href = "#/login";
     }

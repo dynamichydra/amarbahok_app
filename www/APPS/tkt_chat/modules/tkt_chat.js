@@ -8,17 +8,29 @@
       window.location.href = "#/login";
     }
 
+    var refreshCount = 0;
+
   function init() {
     $('.btm-mnu').show();
     $('.sidebar').show();
     $('.content-right').show();
     $('#sendmsg').on('click',sendMessage);
     getTktChat();
+    refreshonce();
     // $('#updteordr').on('click',updateOrder);
     window.setInterval(function(){
       /// call your function here
       getTktChat();
     }, 5000);
+  }
+
+  function refreshonce(){
+    refreshCount = 0;
+    ++refreshCount;
+    console.log(refreshCount);
+    if(refreshCount == 0){
+      window.location.reload();
+    }
   }
 
   function sendMessage(e){

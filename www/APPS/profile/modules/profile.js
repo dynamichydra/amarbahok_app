@@ -120,8 +120,30 @@
       alert('Please choose the office first');
       return false;
     }
-    if(pkg == null){
+    console.log('dist'+distt);
+    console.log('ps'+police_station);
+    if(distt == null){
+      alert('Please choose the district first');
+      return false;
+    }
+
+    if(police_station == null){
+      alert('Please choose the police station first');
+      return false;
+    }
+
+    if(address == ''){
+      alert('Please input the address first');
+      return false;
+    }
+
+    if(pkg == ''){
       alert('Please choose package first');
+      return false;
+    }
+
+    if(company == ''){
+      alert('Please input the company name first');
       return false;
     }
 
@@ -149,17 +171,33 @@
       console.log(res);
       
       if (res.success == true) {
-          swal({
-                title: "Success!",
-                text: "Successfully updated your profile!",
-                icon: "success",
-                // button: "Aww yiss!",
-              });
-              localStorage.setItem('userConfig', btoa(JSON.stringify(res.userdetails)));
-          window.setTimeout(function() {
-            window.location.href = "#/profile";
-              }, 1000);
-            location.reload();
+          // swal({
+          //       title: "Success!",
+          //       text: "Successfully updated your profile!",
+          //       icon: "success",
+          //       // button: "Aww yiss!",
+          //     });
+          //     localStorage.setItem('userConfig', btoa(JSON.stringify(res.userdetails)));
+          // window.setTimeout(function() {
+          //   window.location.href = "#/profile";
+          //     }, 1000);
+          //   location.reload();
+          localStorage.setItem('userConfig', btoa(JSON.stringify(res.userdetails)));
+          window.location.href = "#/place_order";
+            swal('Successfully updated your profile!', {
+              title: "Success!",
+              icon: "success",
+        buttons: {
+          cancel: "Ok",
+        },
+      })
+      .then((value) => {
+        switch (value) {
+          default:
+                location.reload();
+        }
+      });
+
       } else {
           swal({
                 title: "Failure!",

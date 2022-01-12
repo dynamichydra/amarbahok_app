@@ -119,17 +119,34 @@
       console.log(res);
       
       if (res.success == true) {
-          swal({
-                title: "Success!",
-                text: "Successfully updated your profile!",
-                icon: "success",
-                // button: "Aww yiss!",
-              });
-          window.setTimeout(function() {
-            window.location.href = "#/main";
-              }, 1000);
-            localStorage.setItem('userConfig', btoa(JSON.stringify(res.userdetails)));
-            location.reload();
+          // swal({
+          //       title: "Success!",
+          //       text: "Successfully updated your profile!",
+          //       icon: "success",
+          //       // button: "Aww yiss!",
+          //     });
+          // window.setTimeout(function() {
+          //   window.location.href = "#/main";
+          //     }, 1000);
+          //   localStorage.setItem('userConfig', btoa(JSON.stringify(res.userdetails)));
+          //   location.reload();
+
+          localStorage.setItem('userConfig', btoa(JSON.stringify(res.userdetails)));
+          window.location.href = "#/payment";
+            swal('Successfully updated your payment information!', {
+              title: "Success!",
+              icon: "success",
+        buttons: {
+          cancel: "Ok",
+        },
+      })
+      .then((value) => {
+        switch (value) {
+          default:
+                location.reload();
+        }
+      });
+
       } else {
           swal({
                 title: "Failure!",

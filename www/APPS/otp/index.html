@@ -1,0 +1,33 @@
+<style type="text/css">
+    .manuTab{
+        text-align: center;
+        padding: 20px 0px 10px;
+        margin-bottom: 30px;
+    }
+    .manuTab.active{
+        border-bottom: #99211d 5px solid;
+    }
+</style>
+<div class="container"> 
+    <div class="row">
+        <div class="col s12">
+            <div class="manuTab active">
+                <h3 STYLE="font-weight:bold">ENTER OTP</h3>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="input-wrapper">
+                <input type="number" id="userotp" placeholder="OTP"/>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="input-wrapper">
+                <button  id="submit_otp" >Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="APPS/otp/modules/otp.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
