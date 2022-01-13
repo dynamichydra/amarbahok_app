@@ -38,9 +38,34 @@
                   icon: "success",
                   // button: "Aww yiss!",
                 });
-            window.setTimeout(function() {
-              window.location.href = "#/login";
-                }, 1000);
+            // window.setTimeout(function() {
+            //   window.location.href = "#/login";
+            //     }, 1000);
+            // Set the date we're counting down to
+            var countDownDate = new Date().setSeconds(new Date().getSeconds() + 45);
+            // var y = document.getElementById("timer-div");
+
+            var x = setInterval(function() {
+
+              // Get today's date and time
+              var now = new Date().getTime();
+                
+              // Find the distance between now and the count down date
+              var distance = countDownDate - now;
+            
+              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+              // Output the result in an element with id="demo"
+              document.getElementById("timer-div").innerHTML = "<p style='float: right;'>Didn't get mail ? try using OTP after <span style='color:red;'>" + seconds +"</span> seconds...</p>";
+                
+              // If the count down is over, write some text and show button to download
+              if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer-div").innerHTML = "<a href='#forgot_otp' style='float:right;margin-top: 3px;'>Click here to try using OTP</a>";
+                // document.getElementById("button").style.visibility = "visible";
+              }
+            }, 1000);
+            document.getElementById("reset").innerHTML = "Reset Mail Sent";
         } else {
             swal({
                   title: "Failure!",
@@ -48,6 +73,32 @@
                   icon: "error",
                   button: "Try again",
                 });
+
+                // Set the date we're counting down to
+            var countDownDate = new Date().setSeconds(new Date().getSeconds() + 1);
+            // var y = document.getElementById("timer-div");
+
+            var x = setInterval(function() {
+
+              // Get today's date and time
+              var now = new Date().getTime();
+                
+              // Find the distance between now and the count down date
+              var distance = countDownDate - now;
+            
+              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+              // Output the result in an element with id="demo"
+              document.getElementById("timer-div").innerHTML = "<p style='float: right;'>Didn't get mail ? try using OTP after <span style='color:red;'>" + seconds +"</span> seconds...</p>";
+                
+              // If the count down is over, write some text and show button to download
+              if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer-div").innerHTML = "<a href='#forgot_otp' style='float:right;margin-top: 3px;'>Click here to try using OTP</a>";
+                // document.getElementById("button").style.visibility = "visible";
+              }
+            }, 1000);
+
                 document.getElementById("reset").disabled = false;
                 document.getElementById("reset").innerHTML = "Send Email";
         }

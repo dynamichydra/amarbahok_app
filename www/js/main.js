@@ -149,12 +149,13 @@ function gettktnotif(){
     console.log(res);
     if(res.tktcnt > 0){
     $('#totalnotifno').html('1');
-    $('#totalnotifnobottom').html(res.tktcnt);
-    $('#slide-out-right').html('<li><i class="fa fa-bell-o"></i>You have '+res.tktcnt+' new messages in ticket</li>');
+    // $('#totalnotifnobottom').html(res.tktcnt);
+    $('#totalnotifnobottom').html("<i class='fa fa-ticket badge' style='font-size:24px' value='"+res.tktcnt+"'></i>");
+    $('#slide-out-right').html('<li><h5>Notification</h5></li><hr class="hr-line" style="margin-bottom: 10px;"><li><i class="fa fa-bell-o"></i>You have '+res.tktcnt+' new messages in ticket</li>');
     }else{
       $('#totalnotifno').html('0');
-      $('#totalnotifnobottom').html('');
-    $('#slide-out-right').html('<li><center>No messages here</cenetr></li>');
+      $('#totalnotifnobottom').html('<i class="fa fa-ticket"></i>');
+    $('#slide-out-right').html('<li><h5>Notification</h5></li><hr class="hr-line" style="margin-bottom: 10px;"><li><center>No messages here</cenetr></li>');
     }
   })
 }

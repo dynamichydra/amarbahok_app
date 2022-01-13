@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="APPS/make_pass/modules/password.css" type="text/css" />
 <style type="text/css">
     .manuTab{
         text-align: left;
@@ -29,10 +30,24 @@
             <div class="input-wrapper">
                 <input type="password" id="newpass" placeholder="New Password"/>
             </div>
+
+            <div class="col s12">
+                <div id="messagebox">
+                    <h3>Password must contain the following:</h3>
+                    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                    <p id="number" class="invalid">A <b>number</b></p>
+                    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                  </div>
+                  </div>
+                  
         </div>
         <div class="col s12">
             <div class="input-wrapper">
-                <input type="password" id="confpass" placeholder="Confirm Password"/>
+                <input type="password" id="confpass" placeholder="Confirm Password" onkeyup="Validate()"/>
+                <div id="error-message" style="display:none;">
+                    <small style="color:red;"><b>Passwords do not match, New Password and Confirm Password must be same.</b></small>
+                  </div>
             </div>
         </div>
 

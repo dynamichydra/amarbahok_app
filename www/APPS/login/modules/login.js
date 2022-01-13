@@ -71,7 +71,7 @@
     document.getElementById("login").innerHTML = "LOG IN";
           swal({
                 title: "Failure!",
-                text: "Email or Password didn't match!",
+                text: "Email/Mobile or Password didn't match!",
                 icon: "error",
                 button: "Try again",
               });

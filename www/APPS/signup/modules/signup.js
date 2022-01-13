@@ -12,7 +12,8 @@
     $('.sidebar').hide();
     $('.content-right').hide();
     $('#signup').on('click',doRegister);
-    $('#signupotp').on('click',getOTPstatus);
+    // $('#signupotp').on('click',getOTPstatus);
+    $('#signupotp').on('click',checkmobile);
   }
 
   $(document).ready(function () {
@@ -78,6 +79,63 @@
 
   }
 
+  function checkmobile(){
+    var phone = $('#phone').val();
+    var name = $('#name').val();
+    var email = $('#email').val();
+
+  if(name == ''){
+    alert('Please input the name first');
+    return false;
+  }
+
+  if(email == ''){
+    alert('Please input the email first');
+    return false;
+  }
+
+  if(phone == ''){
+    alert('Please input the Phone no first');
+    return false;
+  }
+    // if(email == ''){
+    //   alert('Please provide the valid phone no.');
+    //   return false;
+    // }
+    if($('input[name="tc"]').is(':checked'))
+  {
+    var form = new FormData();
+    form.append("phone", phone);
+    form.append("email", email);
+  
+    DM_CORE.apiForm('checkmobileforotp',form,function(res){
+      console.log(res.success)
+      if (res.success == true) {
+        getOTPstatus();
+  } else {
+    swal({
+          title: "Failure!",
+          // text: o.message,
+          html: true,
+          text: res.message,
+          icon: "warning",
+          button: "OK",
+        });
+  }
+      // localStorage.setItem('userConfig', btoa(JSON.stringify(res)));
+    })
+  }else{
+    swal({
+      title: "Failure!",
+      // text: o.message,
+      html: true,
+      text: 'Please read and accept the Terms & Conditions first.',
+      icon: "warning",
+      button: "OK",
+    });
+  }
+  }
+
 
   function getOTPstatus(){
     var phone = $('#phone').val();
@@ -120,8 +178,6 @@ function doRegisterOTp(otpgenereated){
   //   alert('Please provide the valid phone no.');
   //   return false;
   // }
-  if($('input[name="tc"]').is(':checked'))
-{
   var form = new FormData();
   form.append("name", name);
   form.append("email", email);
@@ -159,16 +215,6 @@ function doRegisterOTp(otpgenereated){
 }
     // localStorage.setItem('userConfig', btoa(JSON.stringify(res)));
   })
-}else{
-  swal({
-    title: "Failure!",
-    // text: o.message,
-    html: true,
-    text: 'Please read and accept the Terms & Conditions first.',
-    icon: "warning",
-    button: "OK",
-  });
-}
 }
   
 })();

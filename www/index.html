@@ -14,6 +14,19 @@
     <link rel="stylesheet" href="css/style.css">
 
   <meta name="theme-color" content="#563d7c">
+  <style>
+.badge:after{
+content:attr(value);
+font-size:12px;
+background: red;
+border-radius:50%;
+padding:3px;
+position:relative;
+left:-8px;
+top:-10px;
+opacity:0.9;
+}
+  </style>
 </head>
 
 <body>
@@ -67,9 +80,9 @@
 <!-- sidebar -->
 <div class="sidebar-panel sidebar-right-search">
     <ul id="slide-out-right" class="collapsible side-nav notification">
-        <li>
+        <!-- <li>
             <h5>Notification</h5></li>
-            <hr class="hr-line" style="margin-bottom: 10px;">
+            <hr class="hr-line" style="margin-bottom: 10px;"> -->
         <!-- <li><i class="fa fa-bell-o"></i> Lorem ipsum dolor sit.</li> -->
         <!-- <li><i class="fa fa-bell-o"></i> Lorem ipsum dolor sit.</li>
         <li><i class="fa fa-bell-o"></i> Lorem ipsum dolor sit.</li> -->
@@ -86,12 +99,11 @@
 <div class="btm-mnu">
     <div class="">
         <div class="tab-btm-menu row" style="margin-bottom: 0px;">
-            <div class="col s5 content-right">
+            <div class="col s5">
                 <ul>
                     <li><a href="#/main" class="btm-link on-load ripple"><i class="fa fa-home"></i></a></li>
                     <li><a href="#order_history" class="ripple"><i class="fa fa-list"></i></a></li>
-                    <li><a href="#/payment_history" class="ripple"><i class="fa fa-ticket"></i>
-                        <sup id ="totalnotifnobottom">0</sup>
+                    <li><a href="#/payment_history" class="ripple" id="totalnotifnobottom"><i class="fa fa-ticket"></i>
                     </a></li>
                     
                 </ul>
