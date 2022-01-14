@@ -115,6 +115,8 @@
     var web = $('#web').val();
     var office = $('#office').val();
     var pkg = $('#package').val();
+    // var d = $('#logo')[0].files[0]
+    var file_data =$("#logo").prop("files")[0];
 
     if(office == ''){
       alert('Please choose the office first');
@@ -161,7 +163,9 @@
     form.append("web", web);
     form.append("package", '15');
     form.append("office", office);
-    
+    // form.append('logoValue', d);
+    form.append("files[]", file_data);
+    console.log(file_data);
     if(office == null){
       alert('Please choose the office');
       return false;
@@ -194,7 +198,7 @@
       .then((value) => {
         switch (value) {
           default:
-                location.reload();
+                // location.reload();
         }
       });
 

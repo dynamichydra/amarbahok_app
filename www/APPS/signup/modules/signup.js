@@ -24,10 +24,22 @@
     var name = $('#name').val();
     var email = $('#email').val();
     var phone = $('#phone').val();
-    // if(email == ''){
-    //   alert('Please provide the valid phone no.');
-    //   return false;
-    // }
+    
+    if(name == ''){
+      alert('Please input the name first');
+      return false;
+    }
+  
+    if(email == ''){
+      alert('Please input the email first');
+      return false;
+    }
+  
+    if(phone == ''){
+      alert('Please input the Phone no first');
+      return false;
+    }
+    
     if($('input[name="tc"]').is(':checked'))
 {
     var form = new FormData();

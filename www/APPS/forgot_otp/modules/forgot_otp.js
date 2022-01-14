@@ -11,7 +11,45 @@
     $('.btm-mnu').hide();
     $('.sidebar').hide();
     $('.content-right').hide();
-    $('#signupotp').on('click',getOTPstatus);
+    // $('#signupotp').on('click',getOTPstatus);
+    $('#signupotp').on('click',checkmobile);
+  }
+
+  function checkmobile(){
+    document.getElementById("signupotp").disabled = true;
+      document.getElementById("signupotp").innerHTML = "Sending";
+    var phone = $('#phone').val();
+
+  if(phone == ''){
+    alert('Please input the Phone no first');
+    return false;
+  }
+    // if(email == ''){
+    //   alert('Please provide the valid phone no.');
+    //   return false;
+    // }
+    var form = new FormData();
+    form.append("phone", phone);
+  
+    DM_CORE.apiForm('checkmobile_reset_otp',form,function(res){
+      console.log(res.success)
+      if (res.success == true) {
+        getOTPstatus();
+  } else {
+    swal({
+          title: "Failure!",
+          // text: o.message,
+          html: true,
+          text: res.message,
+          icon: "warning",
+          button: "OK",
+        });
+        document.getElementById("signupotp").disabled = false;
+      document.getElementById("signupotp").innerHTML = "Send OTP";
+  }
+      // localStorage.setItem('userConfig', btoa(JSON.stringify(res)));
+    })
+
   }
 
 
