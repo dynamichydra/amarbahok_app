@@ -17,6 +17,7 @@
     getAjaxPstation(userConfig.district);
     getoffice();
     $('#updateprofile').on('click',updateProfile);
+    $('.files-selected').html('choose a file to upload');
   }
 
   function getoffice(){
@@ -115,8 +116,7 @@
     var web = $('#web').val();
     var office = $('#office').val();
     var pkg = $('#package').val();
-    // var d = $('#logo')[0].files[0]
-    var file_data =$("#logo").prop("files")[0];
+    var logoValue = $('#logoValue').val();
 
     if(office == ''){
       alert('Please choose the office first');
@@ -163,9 +163,8 @@
     form.append("web", web);
     form.append("package", '15');
     form.append("office", office);
-    // form.append('logoValue', d);
-    form.append("files[]", file_data);
-    console.log(file_data);
+    form.append("picname", logoValue);
+    
     if(office == null){
       alert('Please choose the office');
       return false;
@@ -198,7 +197,7 @@
       .then((value) => {
         switch (value) {
           default:
-                // location.reload();
+                location.reload();
         }
       });
 
@@ -218,3 +217,34 @@
 
 
 })();
+
+$(".logo").change(function(){
+  $('.files-selected').html('Uploading Files.....');
+  var file_data =$("#logo").prop("files")[0];
+  var form = new FormData();
+  form.append("files[]", file_data);
+  //  $.ajax({
+  //    url: $("#base_url").val()+'admin/customer/logoUpload',
+  //    type: 'post',
+  //    data: form_data,
+  //    dataType: 'json',
+  //    contentType: false,
+  //    processData: false,
+  //    complete: function (response) {
+  //      console.log(response.responseText);
+  //      $('.logoValue').val(response.responseText);
+  //      $('.files-selected').html('File/s Uploaded Succesfully!');
+  //    }
+  //  });
+  DM_CORE.apiForm('logoUpload',form,function(res){
+    console.log(res);
+    
+    if (res.success == true) {
+      // $('.logoValue').val(response.responseText);
+      $('#logoValue').val(res.message);
+      $('.files-selected').html('File Uploaded Succesfully!');
+    }
+
+    
+  })
+});
