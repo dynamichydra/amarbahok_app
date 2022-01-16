@@ -39,6 +39,7 @@
     <select name="subject" id="subject" required>
                 <option value="">Select Subject</option>
                  <option value="Shipping Details">Shipping Details</option>
+                 <option value="Parcel Pick">Parcel Pick</option>
                  <option  value="Delivery">Delivery</option>
                  <option  value="Payment">Payment</option>
                  <option  value="Return Parcel">Return Parcel</option>
