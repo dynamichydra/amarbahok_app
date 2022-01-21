@@ -20,6 +20,7 @@ $(function() {
     });
 
     gettktnotif();
+    getVersionInfo();
     // navbar on scroll
     /*$(window).on('scroll', function() {
 
@@ -140,6 +141,10 @@ var intervalId = setInterval(function(){
   gettktnotif();
 }, 5000);
 
+var interlId = setInterval(function(){
+  getVersionInfo();
+}, 5000);
+
 function gettktnotif(){
     var useriddd = userConfig.id;
   var form = new FormData();
@@ -158,6 +163,27 @@ function gettktnotif(){
     $('#slide-out-right').html('<li><h5>Notification</h5></li><hr class="hr-line" style="margin-bottom: 10px;"><li><center>No messages here</cenetr></li>');
     }
   })
+}
+
+function getVersionInfo(){
+  var version = 1;
+var form = new FormData();
+form.append("version", version);
+
+DM_CORE.apiForm('versionifno',form,function(res){
+  console.log(res);
+  if(res.app_ver !=  version){
+    swal({
+      title: "Update",
+      text: "this version of Amar Bahok became obsolete! please download latest version from Google Play Store",
+      type: "success",
+      button: "UPDATE",
+  }).then(function() {
+      window.location = "https://play.google.com/store/apps/details?id=com.dokume.amarbahok";
+      // clearInterval(interlId);
+  });
+  }
+})
 }
 
 
